@@ -13,5 +13,5 @@ region_rect = Rect2(128, 0, 64, 80)
 position = Vector2(0, 0)
 
 [node name="HealthBar" parent="." index="2" unique_id=1951282074]
-offset_top = -40.0
-offset_bottom = -8.0
+offset_top = -49.0
+offset_bottom = -17.0
