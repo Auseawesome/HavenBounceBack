@@ -18,6 +18,12 @@ normal = Vector2(-1, 0)
 [node name="World" type="Node2D" unique_id=568465015]
 script = ExtResource("1_fj7yv")
 
+[node name="LayerContainer" type="Node2D" parent="." unique_id=1940629910]
+
+[node name="Player" parent="." unique_id=173866440 instance=ExtResource("1_f3sb7")]
+position = Vector2(768, 432)
+lock_rotation = true
+
 [node name="TopBoundary" type="StaticBody2D" parent="." unique_id=421721275]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopBoundary" unique_id=1163377906]
@@ -39,10 +45,6 @@ shape = SubResource("WorldBoundaryShape2D_f3sb7")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightBoundary" unique_id=879028510]
 position = Vector2(1536, 0)
 shape = SubResource("WorldBoundaryShape2D_fj7yv")
-
-[node name="Player" parent="." unique_id=173866440 instance=ExtResource("1_f3sb7")]
-position = Vector2(768, 432)
-lock_rotation = true
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1006587902 node_paths=PackedStringArray("player")]
 position = Vector2(768, 0)
