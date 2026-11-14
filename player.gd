@@ -5,9 +5,6 @@ var click_pos: Vector2
 
 var remaining_flings: int = 25
 
-@onready
-var skill_tree := $"../../SkillTree"
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle_front")
@@ -25,7 +22,7 @@ func _input(event: InputEvent) -> void:
 		remaining_flings -= 1
 		$"Control/Label".text = "Flings Remaining: " + str(remaining_flings)
 		if remaining_flings == 0:
-			$"../../SkillTree".reopen_skill_tree()
+			Globals.skill_tree.reopen_skill_tree()
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	if event is not InputEventMouseButton:
@@ -44,4 +41,4 @@ func _on_collision(body: Node) -> void:
 		return;
 	
 	var points_gained = body.on_collision(linear_velocity)
-	skill_tree.current_points += points_gained
+	Globals.skill_tree.current_points += points_gained

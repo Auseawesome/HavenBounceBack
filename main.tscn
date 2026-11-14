@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bhu4yt14iodwx" path="res://levels/template_level.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://bp0vgsh2rrhvn" path="res://main_menu.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://ck45l0w7jd4dt" path="res://skill_points.gd" id="3_h2yge"]
 
 [node name="Main" type="Node" unique_id=1726187915]
 
@@ -66,3 +67,4 @@ offset_bottom = 33.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 24
 text = "Skill Points: 0"
+script = ExtResource("3_h2yge")

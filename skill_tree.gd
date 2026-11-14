@@ -11,10 +11,11 @@ var bounce: float = 0.5
 var current_points: int :
 	set(value):
 		current_points = value
-		$"../SkillPoints".text = "Skill Points: " + str(value)
+		Globals.skill_points_label.text = "Skill Points: " + str(value)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.skill_tree = self
 	$LevelEnterButton.pressed.connect(enter_level)
 
 func enter_level() -> void:
@@ -30,5 +31,5 @@ func _process(delta: float) -> void:
 
 func reopen_skill_tree() -> void:
 	visible = true
-	$"../SkillPoints".position.y = 10
+	Globals.skill_points_label.position.y = 10
 	world_node.queue_free()

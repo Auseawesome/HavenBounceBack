@@ -7,7 +7,7 @@ func _ready() -> void:
 	pressed.connect(_on_pressed)
 
 func _on_pressed() -> void:
-	var points = $"../../../".current_points
+	var points = Globals.skill_tree.current_points
 	
 	if points < 10:
 		return
