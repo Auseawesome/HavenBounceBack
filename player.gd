@@ -1,7 +1,7 @@
 extends RigidBody2D
 
-var isClicked: bool
-var clickPos: Vector2
+var is_clicked: bool
+var click_pos: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,9 +14,9 @@ func _input(event: InputEvent) -> void:
 	if event.button_index != MOUSE_BUTTON_LEFT:
 		return;
 	
-	if !event.pressed && isClicked:
-		linear_velocity += clickPos - event.global_position
-		isClicked = false
+	if !event.pressed && is_clicked:
+		linear_velocity += click_pos - event.global_position
+		is_clicked = false
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	if event is not InputEventMouseButton:
@@ -26,5 +26,5 @@ func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void
 		return;
 	
 	if event.pressed:
-		clickPos = event.global_position
-		isClicked = true
+		click_pos = event.global_position
+		is_clicked = true
