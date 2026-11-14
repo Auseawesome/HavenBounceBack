@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://ca4ybc65x75lw" path="res://player.tscn" id="1_f3sb7"]
 [ext_resource type="Script" uid="uid://c07lbb3exhb1u" path="res://world.gd" id="1_fj7yv"]
 [ext_resource type="Script" uid="uid://ddke7oncmfsfx" path="res://camera_2d.gd" id="3_tlwt5"]
-[ext_resource type="PackedScene" uid="uid://bqihy530r71g4" path="res://obstacle.tscn" id="4_aqk2v"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n3oya"]
 normal = Vector2(0, 1)
@@ -52,7 +51,3 @@ shape = SubResource("WorldBoundaryShape2D_fj7yv")
 position = Vector2(768, 0)
 script = ExtResource("3_tlwt5")
 player = NodePath("../Player")
-
-[node name="Obstacle" parent="." unique_id=841894801 instance=ExtResource("4_aqk2v")]
-position = Vector2(455, 261)
-scale = Vector2(4, 4)
