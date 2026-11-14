@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cibfdhuc8bipr"]
 
-[ext_resource type="PackedScene" uid="uid://cd8al0mb2dja0" path="res://ui/skill_tree/skill_tree_contents.tscn" id="1_217a5"]
-[ext_resource type="Script" uid="uid://dibghben1f6xc" path="res://ui/skill_tree/skill_tree.gd" id="1_fmctd"]
+[ext_resource type="Script" uid="uid://dibghben1f6xc" path="res://ui/skill_tree/skill_tree.gd" id="1_i5h8e"]
+[ext_resource type="PackedScene" uid="uid://cd8al0mb2dja0" path="res://ui/skill_tree/skill_tree_contents.tscn" id="2_gdo5q"]
 
 [node name="SkillTree" type="Control" unique_id=393698293]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_fmctd")
+script = ExtResource("1_i5h8e")
 
 [node name="Label" type="Label" parent="." unique_id=688764210]
 layout_mode = 1
@@ -29,7 +29,7 @@ grow_vertical = 2
 horizontal_scroll_mode = 2
 vertical_scroll_mode = 2
 
-[node name="skill_tree_contents" parent="ScrollContainer" unique_id=1464612974 instance=ExtResource("1_217a5")]
+[node name="SkillTreeContents" parent="ScrollContainer" unique_id=1464612974 instance=ExtResource("2_gdo5q")]
 layout_mode = 2
 
 [node name="LevelEnterButton" type="Button" parent="." unique_id=1242046357]
