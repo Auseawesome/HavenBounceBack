@@ -2,9 +2,10 @@ extends RigidBody2D
 
 var click_listen: bool
 var click_held: bool
-var click_pos: Vector2
 
 var remaining_flings: int = 25
+
+var speed_scale_factor: float = 320
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,21 +16,25 @@ func _input(event: InputEvent) -> void:
 		return
 	
 	if event.pressed:
-		start_fling(event.global_position)
+		start_fling()
 		return
 	
 	if click_held:
-		handle_fling(click_pos - event.global_position)
+		handle_fling(event.global_position)
 
-func start_fling(mousePos: Vector2) -> void:
-	if !click_listen:
-		return
+func start_fling() -> void:
+	if click_listen:
+		click_held = true
+		$DragMax.visible = true
+
+func handle_fling(mouse_pos: Vector2) -> void:
+	$DragMax.visible = false
 	
-	click_pos = mousePos
-	click_held = true
-
-func handle_fling(flingVec: Vector2) -> void:
-	linear_velocity += flingVec
+	var fling_vec := global_position - mouse_pos
+	var clamped_length := clampf(fling_vec.length() / 316, 0, 1)
+	var clamped_fling_vec := fling_vec.normalized() * clamped_length
+	
+	linear_velocity += clamped_fling_vec * speed_scale_factor
 	click_held = false
 	remaining_flings -= 1
 	$"Control/Label".text = "Flings Remaining: " + str(remaining_flings)
