@@ -199,15 +199,16 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0x1uw"]
-radius = 7.0
-height = 16.0
+radius = 29.0
+height = 66.0
 
 [node name="Player" type="RigidBody2D" unique_id=173866440]
 physics_material_override = SubResource("PhysicsMaterial_udeww")
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1982680021]
-position = Vector2(0, -1)
+position = Vector2(-2, -2)
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_0x1uw")
 animation = &"idle_front"
 
