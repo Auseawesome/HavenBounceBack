@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://cd8al0mb2dja0"]
+
+[ext_resource type="Script" uid="uid://de3vn8bw8afmi" path="res://skill_tree_contents.gd" id="1_38owx"]
+
+[node name="skill_tree_contents" type="Control" unique_id=1464612974]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_38owx")
+
+[node name="Panel2" type="Panel" parent="." unique_id=907586108]
+layout_mode = 0
+offset_left = 698.0
+offset_top = 710.0
+offset_right = 738.0
+offset_bottom = 750.0
+
+[node name="Panel" type="Panel" parent="." unique_id=1006439204]
+layout_mode = 0
+offset_left = 140.0
+offset_top = 53.0
+offset_right = 180.0
+offset_bottom = 93.0
+
+[node name="Panel3" type="Panel" parent="." unique_id=73068569]
+layout_mode = 0
+offset_left = 816.0
+offset_top = 290.0
+offset_right = 856.0
+offset_bottom = 330.0
+
+[node name="Panel4" type="Panel" parent="." unique_id=899956041]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 472.0
+offset_right = 130.0
+offset_bottom = 512.0
+
+[node name="Panel5" type="Panel" parent="." unique_id=1065937536]
+layout_mode = 0
+offset_left = 1433.0
+offset_top = 463.0
+offset_right = 1473.0
+offset_bottom = 503.0
