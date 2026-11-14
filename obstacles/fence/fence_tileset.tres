@@ -1,0 +1,21 @@
+[gd_resource type="TileSet" format=3 uid="uid://digylni7diecp"]
+
+[ext_resource type="PackedScene" uid="uid://45e6tlsxp1rj" path="res://obstacles/fence/fence.tscn" id="1_ppgra"]
+[ext_resource type="PackedScene" uid="uid://b01rb7li6ka6g" path="res://obstacles/fence/fence_back_left.tscn" id="2_d6eb7"]
+[ext_resource type="PackedScene" uid="uid://c3c6uf4k8qbj3" path="res://obstacles/fence/fence_back_right.tscn" id="3_uu1hq"]
+[ext_resource type="PackedScene" uid="uid://bmn88t5u6rksj" path="res://obstacles/fence/fence_left.tscn" id="4_4chx0"]
+[ext_resource type="PackedScene" uid="uid://dml66kypvxgaw" path="res://obstacles/fence/fence_right.tscn" id="5_ts8wy"]
+[ext_resource type="PackedScene" uid="uid://bw3fcdsj6y7ik" path="res://obstacles/fence/fence_up_left.tscn" id="6_p61uv"]
+[ext_resource type="PackedScene" uid="uid://bggskpay0430" path="res://obstacles/fence/fence_up_right.tscn" id="7_c5x24"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_axry3"]
+scenes/1/scene = ExtResource("1_ppgra")
+scenes/2/scene = ExtResource("2_d6eb7")
+scenes/3/scene = ExtResource("3_uu1hq")
+scenes/4/scene = ExtResource("4_4chx0")
+scenes/5/scene = ExtResource("5_ts8wy")
+scenes/6/scene = ExtResource("6_p61uv")
+scenes/7/scene = ExtResource("7_c5x24")
+
+[resource]
+sources/0 = SubResource("TileSetScenesCollectionSource_axry3")
