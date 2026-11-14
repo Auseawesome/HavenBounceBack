@@ -1,5 +1,8 @@
 extends Node2D
 
+const SCREEN_SIZE := 864
+
+var world_height := SCREEN_SIZE
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,4 +14,5 @@ func _process(delta: float) -> void:
 	pass
 
 func set_world_height(height: int) -> void:
-	$TopBoundary/CollisionShape2D.position.y = 864 - height
+	world_height = height
+	$TopBoundary/CollisionShape2D.position.y = SCREEN_SIZE - height
