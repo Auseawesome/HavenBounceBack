@@ -2,7 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bqihy530r71g4" path="res://obstacle.tscn" id="1_rgfyn"]
 
-[node name="BigTree" unique_id=841894801 instance=ExtResource("1_rgfyn")]
+[node name="AppleTree" unique_id=841894801 instance=ExtResource("1_rgfyn")]
+max_health = 50
 
 [node name="Sprite2D" parent="." index="0" unique_id=2041058344]
 position = Vector2(0, -24)
