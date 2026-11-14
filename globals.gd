@@ -14,3 +14,8 @@ func enter_level() -> void:
 	skill_tree.visible = false
 	
 	world.set_world_height(2592)
+
+func exit_level() -> void:
+	world.queue_free()
+	skill_tree.visible = true
+	Globals.skill_points_label.position.y = 10

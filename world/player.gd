@@ -21,8 +21,8 @@ func _input(event: InputEvent) -> void:
 		is_clicked = false
 		remaining_flings -= 1
 		$"Control/Label".text = "Flings Remaining: " + str(remaining_flings)
-		if remaining_flings == 0:
-			Globals.skill_tree.reopen_skill_tree()
+		if remaining_flings < 0:
+			Globals.exit_level()
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	if event is not InputEventMouseButton:
