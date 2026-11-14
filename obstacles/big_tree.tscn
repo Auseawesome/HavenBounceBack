@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://cks8m3qtu78fr"]
+
+[ext_resource type="PackedScene" uid="uid://bqihy530r71g4" path="res://obstacle.tscn" id="1_xg0c3"]
+
+[node name="BigTree" unique_id=841894801 instance=ExtResource("1_xg0c3")]
