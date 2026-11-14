@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://de3vn8bw8afmi" path="res://skill_tree_contents.gd" id="1_38owx"]
 [ext_resource type="Texture2D" uid="uid://dxugmk07k3rlr" path="res://skills/Icon4.png" id="2_al2oq"]
+[ext_resource type="Script" uid="uid://bk7mkgs6cdmm6" path="res://skill_upgrade.gd" id="3_rst24"]
 [ext_resource type="Texture2D" uid="uid://c276da17ocnfq" path="res://skills/Icon37.png" id="3_wegh5"]
 [ext_resource type="Texture2D" uid="uid://3vd650mdr2v1" path="res://skills/Icon35.png" id="4_rst24"]
 
@@ -22,6 +23,14 @@ offset_right = 428.0
 offset_bottom = 314.0
 texture_normal = ExtResource("2_al2oq")
 stretch_mode = 0
+script = ExtResource("3_rst24")
+
+[node name="Label" type="Label" parent="DamageSkill" unique_id=742540164]
+layout_mode = 0
+offset_top = -42.0
+offset_right = 124.0
+offset_bottom = -19.0
+text = "Times Bought: 0"
 
 [node name="BounceSkill" type="TextureButton" parent="." unique_id=1579676187]
 layout_mode = 0
@@ -31,6 +40,14 @@ offset_right = 1036.0
 offset_bottom = 648.0
 texture_normal = ExtResource("3_wegh5")
 stretch_mode = 0
+script = ExtResource("3_rst24")
+
+[node name="Label" type="Label" parent="BounceSkill" unique_id=1544481907]
+layout_mode = 0
+offset_top = -42.0
+offset_right = 124.0
+offset_bottom = -19.0
+text = "Times Bought: 0"
 
 [node name="SpeedSkill" type="TextureButton" parent="." unique_id=1634551368]
 layout_mode = 0
@@ -40,3 +57,11 @@ offset_right = 1199.0
 offset_bottom = 276.0
 texture_normal = ExtResource("4_rst24")
 stretch_mode = 0
+script = ExtResource("3_rst24")
+
+[node name="Label" type="Label" parent="SpeedSkill" unique_id=420795428]
+layout_mode = 0
+offset_top = -42.0
+offset_right = 124.0
+offset_bottom = -19.0
+text = "Times Bought: 0"
