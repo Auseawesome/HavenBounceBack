@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b0536y07b0y3w"]
+
+[ext_resource type="PackedScene" uid="uid://bqihy530r71g4" path="res://obstacle.tscn" id="1_6q65o"]
+[ext_resource type="Texture2D" uid="uid://caim87bxmphwg" path="res://obstacles/animal/Cow_animation.png" id="2_mh3yw"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p7dgv"]
+radius = 7.0
+height = 32.0
+
+[node name="Cow" unique_id=841894801 instance=ExtResource("1_6q65o")]
+max_health = 150
+
+[node name="Sprite2D" parent="." index="0" unique_id=2041058344]
+position = Vector2(2, -3)
+texture = ExtResource("2_mh3yw")
+region_rect = Rect2(384, 0, 64, 64)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=396573896]
+position = Vector2(0, 0)
+shape = SubResource("CapsuleShape2D_p7dgv")
+
+[node name="HealthBar" parent="." index="2" unique_id=1951282074]
+offset_top = -21.0
+offset_bottom = 11.0
