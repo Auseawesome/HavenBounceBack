@@ -3,6 +3,7 @@ extends RigidBody2D
 var is_clicked: bool
 var click_pos: Vector2
 
+var remaining_flings: int = 25
 
 @onready
 var skill_tree := $"../../SkillTree"
@@ -21,6 +22,10 @@ func _input(event: InputEvent) -> void:
 	if !event.pressed && is_clicked:
 		linear_velocity += click_pos - event.global_position
 		is_clicked = false
+		remaining_flings -= 1
+		$"Control/Label".text = "Flings Remaining: " + str(remaining_flings)
+		if remaining_flings == 0:
+			$"../../SkillTree".reopen_skill_tree()
 
 func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void:
 	if event is not InputEventMouseButton:
