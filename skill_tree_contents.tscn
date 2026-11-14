@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://cd8al0mb2dja0"]
 
 [ext_resource type="Script" uid="uid://de3vn8bw8afmi" path="res://skill_tree_contents.gd" id="1_38owx"]
+[ext_resource type="Texture2D" uid="uid://dxugmk07k3rlr" path="res://skills/Icon4.png" id="2_al2oq"]
+[ext_resource type="Texture2D" uid="uid://c276da17ocnfq" path="res://skills/Icon37.png" id="3_wegh5"]
+[ext_resource type="Texture2D" uid="uid://3vd650mdr2v1" path="res://skills/Icon35.png" id="4_rst24"]
 
 [node name="SkillTreeContents" type="Control" unique_id=1464612974]
 layout_mode = 3
@@ -11,37 +14,29 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_38owx")
 
-[node name="Panel2" type="Panel" parent="." unique_id=907586108]
+[node name="DamageSkill" type="TextureButton" parent="." unique_id=901981233]
 layout_mode = 0
-offset_left = 698.0
-offset_top = 710.0
-offset_right = 738.0
-offset_bottom = 750.0
+offset_left = 300.0
+offset_top = 186.0
+offset_right = 428.0
+offset_bottom = 314.0
+texture_normal = ExtResource("2_al2oq")
+stretch_mode = 0
 
-[node name="Panel" type="Panel" parent="." unique_id=1006439204]
+[node name="BounceSkill" type="TextureButton" parent="." unique_id=1579676187]
 layout_mode = 0
-offset_left = 140.0
-offset_top = 53.0
-offset_right = 180.0
-offset_bottom = 93.0
+offset_left = 908.0
+offset_top = 520.0
+offset_right = 1036.0
+offset_bottom = 648.0
+texture_normal = ExtResource("3_wegh5")
+stretch_mode = 0
 
-[node name="Panel3" type="Panel" parent="." unique_id=73068569]
+[node name="SpeedSkill" type="TextureButton" parent="." unique_id=1634551368]
 layout_mode = 0
-offset_left = 816.0
-offset_top = 290.0
-offset_right = 856.0
-offset_bottom = 330.0
-
-[node name="Panel4" type="Panel" parent="." unique_id=899956041]
-layout_mode = 0
-offset_left = 90.0
-offset_top = 472.0
-offset_right = 130.0
-offset_bottom = 512.0
-
-[node name="Panel5" type="Panel" parent="." unique_id=1065937536]
-layout_mode = 0
-offset_left = 1433.0
-offset_top = 463.0
-offset_right = 1473.0
-offset_bottom = 503.0
+offset_left = 1071.0
+offset_top = 148.0
+offset_right = 1199.0
+offset_bottom = 276.0
+texture_normal = ExtResource("4_rst24")
+stretch_mode = 0
