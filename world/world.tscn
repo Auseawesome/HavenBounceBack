@@ -48,7 +48,7 @@ shape = SubResource("WorldBoundaryShape2D_f3sb7")
 position = Vector2(1536, 0)
 shape = SubResource("WorldBoundaryShape2D_fj7yv")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1006587902 node_paths=PackedStringArray("player")]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=834317419 node_paths=PackedStringArray("player")]
 position = Vector2(768, 0)
 script = ExtResource("3_tlwt5")
 player = NodePath("../Player")
