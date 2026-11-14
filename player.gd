@@ -28,3 +28,10 @@ func _input_event(viewport: Viewport, event: InputEvent, shape_idx: int) -> void
 	if event.pressed:
 		click_pos = event.global_position
 		is_clicked = true
+		
+
+func _on_collision(body: Node) -> void:
+	if body is not Obstacle:
+		return;
+	
+	body.on_collision(linear_velocity)
