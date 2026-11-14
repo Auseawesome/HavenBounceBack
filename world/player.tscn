@@ -202,8 +202,10 @@ animations = [{
 radius = 29.0
 height = 66.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_n3oya"]
+radius = 48.0
+
 [node name="Player" type="RigidBody2D" unique_id=173866440]
-input_pickable = true
 physics_material_override = SubResource("PhysicsMaterial_udeww")
 contact_monitor = true
 max_contacts_reported = 16
@@ -235,4 +237,11 @@ grow_horizontal = 2
 text = "Flings Remaining: 25"
 horizontal_alignment = 1
 
+[node name="ClickArea" type="Area2D" parent="." unique_id=2010428478]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=714844918]
+shape = SubResource("CircleShape2D_n3oya")
+
 [connection signal="body_entered" from="." to="." method="_on_collision"]
+[connection signal="mouse_entered" from="ClickArea" to="." method="_on_click_area_enter"]
+[connection signal="mouse_exited" from="ClickArea" to="." method="_on_click_area_exit"]
