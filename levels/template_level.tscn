@@ -84,7 +84,6 @@ position = Vector2(28, 81)
 
 [node name="Chicken2" parent="ScaleNode" unique_id=1095828345 instance=ExtResource("8_3gnc5")]
 position = Vector2(283.5, 78.25)
-scale = Vector2(-1, 1)
 
 [node name="Pig" parent="ScaleNode" unique_id=1401927754 instance=ExtResource("9_d7682")]
 position = Vector2(39, 654)
