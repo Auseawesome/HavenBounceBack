@@ -22,8 +22,6 @@ func _ready() -> void:
 		
 		child.position += min_child_pos + Vector2(50, 50)
 	
-	print(min_child_pos)
-	
 	custom_minimum_size = max_child_pos - min_child_pos + Vector2(100, 100)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
