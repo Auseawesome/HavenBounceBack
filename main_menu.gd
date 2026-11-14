@@ -7,4 +7,5 @@ func _ready() -> void:
 
 func load_game() -> void:
 	get_parent().add_child(skill_tree.instantiate())
+	$"../SkillPoints".visible = true
 	queue_free()

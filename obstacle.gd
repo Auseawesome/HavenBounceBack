@@ -10,8 +10,10 @@ var points : int = 10
 @onready
 var health := max_health
 
-func on_collision(velocity: Vector2) -> void:
+func on_collision(velocity: Vector2) -> int:
 	health -= velocity.length() / 10
 	$HealthBar/Background/Fill.anchor_right = float(health) / max_health
 	if health <= 0:
 		queue_free()
+		return points
+	return 0

@@ -2,6 +2,11 @@ extends Control
 
 var world := preload("res://world.tscn")
 
+var current_points: int :
+	set(value):
+		current_points = value
+		$"../SkillPoints".text = "Skill Points: " + str(value)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$LevelEnterButton.pressed.connect(enter_level)

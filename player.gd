@@ -3,6 +3,10 @@ extends RigidBody2D
 var is_clicked: bool
 var click_pos: Vector2
 
+
+@onready
+var skill_tree := $"../../SkillTree"
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.play("idle_front")
@@ -34,4 +38,5 @@ func _on_collision(body: Node) -> void:
 	if body is not Obstacle:
 		return;
 	
-	body.on_collision(linear_velocity)
+	var points_gained = body.on_collision(linear_velocity)
+	skill_tree.current_points += points_gained
