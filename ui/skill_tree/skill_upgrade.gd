@@ -7,10 +7,8 @@ func _ready() -> void:
 	pressed.connect(_on_pressed)
 
 func _on_pressed() -> void:
-	var points = Globals.skill_tree.current_points
-	
-	if points < 10:
+	if Globals.skill_tree.current_points < 10:
 		return
-	points -= 10
+	Globals.skill_tree.current_points -= 10
 	bought_times += 1
 	$Label.text = "Times Bought: " + str(bought_times)
