@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://de3vn8bw8afmi" path="res://skill_tree_contents.gd" id="1_38owx"]
 
-[node name="skill_tree_contents" type="Control" unique_id=1464612974]
+[node name="SkillTreeContents" type="Control" unique_id=1464612974]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
