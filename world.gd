@@ -15,4 +15,4 @@ func _process(delta: float) -> void:
 
 func set_world_height(height: int) -> void:
 	world_height = height
-	$TopBoundary/CollisionShape2D.position.y = SCREEN_SIZE - height
+	$BottomBoundary/CollisionShape2D.position.y = height - 196

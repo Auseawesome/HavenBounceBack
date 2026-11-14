@@ -11,7 +11,7 @@ func enter_level() -> void:
 	get_parent().add_child(world_node)
 	visible = false
 	
-	world_node.set_world_height(2048)
+	world_node.set_world_height(2560)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
