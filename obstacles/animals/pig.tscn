@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://dutovms2in3nu"]
+
+[ext_resource type="PackedScene" uid="uid://bqihy530r71g4" path="res://obstacles/obstacle_base.tscn" id="1_foujj"]
+[ext_resource type="Texture2D" uid="uid://b34ttni3nl32a" path="res://sprites/animals/Pig_animation.png" id="2_foujj"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p7dgv"]
+radius = 5.0
+height = 24.0
+
+[node name="Pig" unique_id=841894801 instance=ExtResource("1_foujj")]
+max_health = 150
+points = 50
+
+[node name="Sprite2D" parent="." index="0" unique_id=2041058344]
+position = Vector2(0, -5)
+texture = ExtResource("2_foujj")
+region_rect = Rect2(96, 0, 32, 32)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=396573896]
+position = Vector2(0, 0)
+shape = SubResource("CapsuleShape2D_p7dgv")
+
+[node name="HealthBar" parent="." index="2" unique_id=1951282074]
+offset_top = -20.0
+offset_bottom = 12.0

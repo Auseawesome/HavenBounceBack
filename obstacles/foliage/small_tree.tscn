@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://br1ut0i6nwfk2"]
+
+[ext_resource type="PackedScene" uid="uid://bqihy530r71g4" path="res://obstacles/obstacle_base.tscn" id="1_p7dgv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p7dgv"]
+radius = 6.0
+height = 16.0
+
+[node name="SmallTree" unique_id=841894801 instance=ExtResource("1_p7dgv")]
+max_health = 25
+
+[node name="Sprite2D" parent="." index="0" unique_id=2041058344]
+position = Vector2(0, -14)
+region_rect = Rect2(112, 80, 48, 48)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=396573896]
+position = Vector2(0, 0)
+shape = SubResource("CapsuleShape2D_p7dgv")
+
+[node name="HealthBar" parent="." index="2" unique_id=1951282074]
+offset_top = -43.0
+offset_bottom = -11.0

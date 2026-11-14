@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://bqihy530r71g4"]
+
+[ext_resource type="Script" uid="uid://bpg0okh3h0ln7" path="res://obstacles/obstacle.gd" id="1_aubd6"]
+[ext_resource type="Texture2D" uid="uid://li21tr03xfke" path="res://sprites/obstacles/Trees_rocks.png" id="2_vcivv"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
+radius = 9.0
+height = 26.0
+
+[node name="Obstacle" type="StaticBody2D" unique_id=841894801]
+script = ExtResource("1_aubd6")
+metadata/_custom_type_script = "uid://bpg0okh3h0ln7"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2041058344]
+texture = ExtResource("2_vcivv")
+region_enabled = true
+region_rect = Rect2(0, 0, 64, 80)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=396573896]
+position = Vector2(0, 24)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_onrkg")
+
+[node name="HealthBar" type="Control" parent="." unique_id=1951282074]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+
+[node name="Background" type="ColorRect" parent="HealthBar" unique_id=1293509241]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = 4.0
+
+[node name="Fill" type="ColorRect" parent="HealthBar/Background" unique_id=1164189059]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 0, 0, 1)

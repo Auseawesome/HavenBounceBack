@@ -1,13 +1,16 @@
 extends Node
 
+var main: Node
+
 var skill_tree: Control
 var skill_points_label: Label
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var world_scene := preload("res://world/world.tscn")
+var world: Node2D
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func enter_level() -> void:
+	world = world_scene.instantiate()
+	main.add_child(world)
+	skill_tree.visible = false
+	
+	world.set_world_height(2592)

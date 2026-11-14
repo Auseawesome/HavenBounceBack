@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dml66kypvxgaw"]
+
+[ext_resource type="PackedScene" uid="uid://bqihy530r71g4" path="res://obstacles/obstacle_base.tscn" id="1_gklny"]
+[ext_resource type="Texture2D" uid="uid://dq2fltpqxaxsl" path="res://sprites/obstacles/exterior.png" id="2_78ptr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p7dgv"]
+radius = 6.0
+height = 20.0
+
+[node name="FenceRight" unique_id=841894801 instance=ExtResource("1_gklny")]
+max_health = 20
+points = 5
+
+[node name="Sprite2D" parent="." index="0" unique_id=2041058344]
+position = Vector2(0, -2)
+texture = ExtResource("2_78ptr")
+region_rect = Rect2(224, 48, 16, 16)
+
+[node name="CollisionShape2D" parent="." index="1" unique_id=396573896]
+position = Vector2(0, 0)
+shape = SubResource("CapsuleShape2D_p7dgv")
+
+[node name="HealthBar" parent="." index="2" unique_id=1951282074]
+offset_left = -7.0
+offset_top = -18.0
+offset_right = 7.0
+offset_bottom = 14.0

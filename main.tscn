@@ -1,10 +1,13 @@
 [gd_scene format=3 uid="uid://ca12f1v147pb6"]
 
 [ext_resource type="PackedScene" uid="uid://bhu4yt14iodwx" path="res://levels/template_level.tscn" id="1_0xm2m"]
-[ext_resource type="Script" uid="uid://bp0vgsh2rrhvn" path="res://main_menu.gd" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://ck45l0w7jd4dt" path="res://skill_points.gd" id="3_h2yge"]
+[ext_resource type="Script" uid="uid://bp0vgsh2rrhvn" path="res://ui/main_menu.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://ckh5qrfxnbncj" path="res://main.gd" id="1_lquwl"]
+[ext_resource type="PackedScene" uid="uid://cibfdhuc8bipr" path="res://ui/skill_tree/skill_tree.tscn" id="3_1bvp3"]
+[ext_resource type="Script" uid="uid://ck45l0w7jd4dt" path="res://ui/skill_tree/skill_points.gd" id="3_h2yge"]
 
 [node name="Main" type="Node" unique_id=1726187915]
+script = ExtResource("1_lquwl")
 
 [node name="MainMenu" type="Control" parent="." unique_id=2111156708]
 layout_mode = 3
@@ -53,6 +56,9 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "Play Game!"
+
+[node name="SkillTree" parent="." unique_id=393698293 instance=ExtResource("3_1bvp3")]
+visible = false
 
 [node name="SkillPoints" type="Label" parent="." unique_id=951006347]
 visible = false
