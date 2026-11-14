@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cuoq2rk0un5kl"]
 
 [ext_resource type="PackedScene" uid="uid://ca4ybc65x75lw" path="res://player.tscn" id="1_f3sb7"]
+[ext_resource type="Script" uid="uid://c07lbb3exhb1u" path="res://world.gd" id="1_fj7yv"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n3oya"]
 normal = Vector2(0, 1)
@@ -14,6 +15,7 @@ normal = Vector2(1, 0)
 normal = Vector2(-1, 0)
 
 [node name="World" type="Node2D" unique_id=568465015]
+script = ExtResource("1_fj7yv")
 
 [node name="TopBoundary" type="StaticBody2D" parent="." unique_id=421721275]
 
