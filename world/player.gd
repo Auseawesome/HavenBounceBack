@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 var click_listen: bool
-var is_clicked: bool
+var click_held: bool
 var click_pos: Vector2
 
 var remaining_flings: int = 25
@@ -12,20 +12,25 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is not InputEventMouseButton or event.button_index != MOUSE_BUTTON_LEFT:
-		return;
+		return
 	
 	if event.pressed:
-		if click_listen:
-			click_pos = event.global_position
-			is_clicked = true
-		
+		start_fling(event.global_position)
 		return
 	
-	if !is_clicked:
+	if click_held:
+		handle_fling(click_pos - event.global_position)
+
+func start_fling(mousePos: Vector2) -> void:
+	if !click_listen:
 		return
 	
-	linear_velocity += click_pos - event.global_position
-	is_clicked = false
+	click_pos = mousePos
+	click_held = true
+
+func handle_fling(flingVec: Vector2) -> void:
+	linear_velocity += flingVec
+	click_held = false
 	remaining_flings -= 1
 	$"Control/Label".text = "Flings Remaining: " + str(remaining_flings)
 	if remaining_flings < 0:
