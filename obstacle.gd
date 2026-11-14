@@ -4,6 +4,9 @@ extends StaticBody2D
 @export
 var max_health: int = 100
 
+@export
+var points : int = 10
+
 @onready
 var health := max_health
 

@@ -4,6 +4,7 @@
 
 [node name="BigTree" unique_id=841894801 instance=ExtResource("1_xg0c3")]
 max_health = 60
+points = 15
 
 [node name="Sprite2D" parent="." index="0" unique_id=2041058344]
 position = Vector2(0, -24)

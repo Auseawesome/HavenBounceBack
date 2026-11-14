@@ -9,6 +9,7 @@ height = 20.0
 
 [node name="FenceBackRight" unique_id=841894801 instance=ExtResource("1_oibkg")]
 max_health = 20
+points = 5
 
 [node name="Sprite2D" parent="." index="0" unique_id=2041058344]
 position = Vector2(0, -2)

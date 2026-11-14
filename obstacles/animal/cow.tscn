@@ -9,6 +9,7 @@ height = 32.0
 
 [node name="Cow" unique_id=841894801 instance=ExtResource("1_6q65o")]
 max_health = 150
+points = 50
 
 [node name="Sprite2D" parent="." index="0" unique_id=2041058344]
 position = Vector2(2, -3)
