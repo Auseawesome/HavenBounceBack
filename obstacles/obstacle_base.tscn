@@ -21,7 +21,12 @@ position = Vector2(0, 24)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_onrkg")
 
+[node name="ShowHealthTimer" type="Timer" parent="." unique_id=631918795]
+wait_time = 2.5
+one_shot = true
+
 [node name="HealthBar" type="Control" parent="." unique_id=1951282074]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = -16.0
@@ -44,3 +49,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0, 0, 1)
+
+[connection signal="timeout" from="ShowHealthTimer" to="." method="_on_show_health_timer_timeout"]
