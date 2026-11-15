@@ -5,8 +5,8 @@ void vertex() {
 }
 
 void fragment() {
-	int x = int(FRAGCOORD.x / 4.0);
-	int y = int(FRAGCOORD.y / 4.0);
+	int x = int(UV.x / TEXTURE_PIXEL_SIZE.x);
+	int y = int(UV.y / TEXTURE_PIXEL_SIZE.y);
 	
 	if ((x + y) % 2 == 0) {
 		COLOR = vec4(0.0);
