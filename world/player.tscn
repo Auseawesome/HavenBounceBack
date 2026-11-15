@@ -229,6 +229,7 @@ anchors_preset = 0
 offset_left = -128.0
 offset_top = -64.0
 offset_right = 128.0
+mouse_filter = 2
 
 [node name="Label" type="Label" parent="Control" unique_id=1178970371]
 layout_mode = 1
