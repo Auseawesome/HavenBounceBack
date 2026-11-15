@@ -206,11 +206,12 @@ height = 66.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_n3oya"]
 radius = 48.0
 
-[node name="Player" type="RigidBody2D" unique_id=173866440]
+[node name="Player" type="RigidBody2D" unique_id=1734332466]
 physics_material_override = SubResource("PhysicsMaterial_udeww")
 contact_monitor = true
 max_contacts_reported = 16
 script = ExtResource("1_onrkg")
+metadata/_custom_type_script = "uid://cu7qdgr4lojfg"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1982680021]
 position = Vector2(-2, -2)

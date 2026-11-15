@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dibghben1f6xc" path="res://ui/skill_tree/skill_tree.gd" id="1_i5h8e"]
 [ext_resource type="PackedScene" uid="uid://cd8al0mb2dja0" path="res://ui/skill_tree/skill_tree_contents.tscn" id="2_gdo5q"]
 
-[node name="SkillTree" type="Control" unique_id=393698293]
+[node name="SkillTree" type="Control" unique_id=497354055]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,6 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i5h8e")
+metadata/_custom_type_script = "uid://dibghben1f6xc"
 
 [node name="Label" type="Label" parent="." unique_id=688764210]
 layout_mode = 1

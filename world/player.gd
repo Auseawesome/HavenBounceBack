@@ -1,3 +1,4 @@
+class_name Player
 extends RigidBody2D
 
 var click_listen: bool

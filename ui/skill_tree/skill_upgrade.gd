@@ -1,3 +1,4 @@
+class_name SkillUpgrade
 extends TextureButton
 
 var bought_times: int = 0

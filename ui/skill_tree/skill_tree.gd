@@ -1,8 +1,5 @@
+class_name SkillTree
 extends Control
-
-var speed: float = 1
-var damage: float = 1
-var bounce: float = 0.5
 
 var current_points: int :
 	set(value):

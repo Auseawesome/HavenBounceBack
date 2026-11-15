@@ -2,13 +2,13 @@ extends Node
 
 var main: Node
 
-var player: RigidBody2D
+var player: Player
 
-var skill_tree: Control
+var skill_tree: SkillTree
 var skill_points_label: Label
 
 var world_scene := preload("res://world/world.tscn")
-var world: Node2D
+var world: World
 
 func enter_level() -> void:
 	world = world_scene.instantiate()
