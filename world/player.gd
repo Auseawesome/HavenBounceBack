@@ -1,6 +1,13 @@
 class_name Player
 extends RigidBody2D
 
+const MAX_ARROW_LENGTH = 52
+const VIEWPORT_SIZE = 64
+const VIEWPORT_SIZE_VEC = Vector2(VIEWPORT_SIZE, VIEWPORT_SIZE)
+
+@onready var arrow_rotator := $ArrowViewer/ScaledArrowRenderer/ArrowRotator
+@onready var direction_arrow := $ArrowViewer/ScaledArrowRenderer/ArrowRotator/DirectionArrow
+
 var click_listen: bool
 var click_held: bool
 
@@ -30,11 +37,28 @@ func _input(event: InputEvent) -> void:
 	if click_held:
 		handle_fling()
 
-func draw_arrow() -> void:
-	var angle = (-get_local_mouse_position()).angle()
+func get_clamped_fling_length(mouse_pos: Vector2) -> float:
+	var fling_vec := -mouse_pos
+	return clampf(fling_vec.length() / 316, 0, 1)
 	
-	$ArrowViewer.position = Vector2(160, 0).rotated(angle) - Vector2(128, 128)
-	$ArrowViewer/ScaledArrowRenderer/DirectionArrow.rotation = angle
+
+func draw_arrow() -> void:
+	var mouse_pos := get_local_mouse_position()
+	
+	var arrow_proportion := get_clamped_fling_length(mouse_pos)
+	
+	# Use proportion of arrow to change length
+	var start_point: Vector2 = direction_arrow.points[0]
+	start_point.x = (1 - arrow_proportion) * MAX_ARROW_LENGTH
+	direction_arrow.set_point_position(0, start_point)
+	
+	# Calculate angle and offset using arrow length and viewport sizes
+	var angle := (-mouse_pos).angle()
+	var offset := MAX_ARROW_LENGTH * 4 * arrow_proportion - VIEWPORT_SIZE/2
+	
+	# Set positions using calculated values
+	$ArrowViewer.position = Vector2(offset, 0).rotated(angle) - VIEWPORT_SIZE_VEC*2
+	arrow_rotator.rotation = angle
 
 func start_fling() -> void:
 	if click_listen:
@@ -47,9 +71,7 @@ func handle_fling() -> void:
 	$ArrowViewer.visible = false
 	
 	var fling_vec := -get_local_mouse_position()
-	print(fling_vec)
-	var clamped_length := clampf(fling_vec.length() / 316, 0, 1)
-	var clamped_fling_vec := fling_vec.normalized() * clamped_length
+	var clamped_fling_vec := fling_vec.normalized() * get_clamped_fling_length(fling_vec)
 	var fling_velocity := clamped_fling_vec * speed_scale_factor
 	
 	# Keep old velocity only if moving in similar direction to new velocity
@@ -57,7 +79,6 @@ func handle_fling() -> void:
 	var norm_fling := fling_velocity.normalized()
 	var norm_velocity := linear_velocity.normalized()
 	var velocity_keep_factor := (norm_velocity.dot(norm_fling) - 1) * (redirection_responsiveness) / 2 + 1
-	print(velocity_keep_factor)
 	linear_velocity = fling_velocity + (velocity_keep_factor * linear_velocity)
 	
 	click_held = false
