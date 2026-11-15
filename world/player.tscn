@@ -207,6 +207,7 @@ height = 66.0
 radius = 72.0
 
 [node name="Player" type="RigidBody2D" unique_id=1734332466]
+collision_layer = 3
 physics_material_override = SubResource("PhysicsMaterial_udeww")
 contact_monitor = true
 max_contacts_reported = 16

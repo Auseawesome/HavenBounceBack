@@ -12,6 +12,9 @@ position = Vector2(0, -24)
 [node name="CollisionShape2D" parent="." index="1" unique_id=396573896]
 position = Vector2(0, 0)
 
-[node name="HealthBar" parent="." index="2" unique_id=1951282074]
+[node name="HealthBar" parent="." index="3" unique_id=1951282074]
 offset_top = -40.0
 offset_bottom = -8.0
+
+[node name="CollisionShape2D" parent="ObscuredArea" parent_id_path=PackedInt32Array(322378701) index="0" unique_id=360312612]
+position = Vector2(0, -32)

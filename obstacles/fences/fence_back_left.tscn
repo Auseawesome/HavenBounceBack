@@ -7,6 +7,9 @@
 radius = 6.0
 height = 20.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qi21q"]
+size = Vector2(16, 12)
+
 [node name="FenceBackLeft" unique_id=841894801 instance=ExtResource("1_3boel")]
 max_health = 20
 points = 5
@@ -20,8 +23,12 @@ region_rect = Rect2(208, 32, 16, 16)
 position = Vector2(0, 0)
 shape = SubResource("CapsuleShape2D_p7dgv")
 
-[node name="HealthBar" parent="." index="2" unique_id=1951282074]
+[node name="HealthBar" parent="." index="3" unique_id=1951282074]
 offset_left = -7.0
 offset_top = -18.0
 offset_right = 7.0
 offset_bottom = 14.0
+
+[node name="CollisionShape2D" parent="ObscuredArea" parent_id_path=PackedInt32Array(322378701) index="0" unique_id=360312612]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_qi21q")
