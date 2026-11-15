@@ -2,6 +2,8 @@ extends Node
 
 var main: Node
 
+var player: RigidBody2D
+
 var skill_tree: Control
 var skill_points_label: Label
 

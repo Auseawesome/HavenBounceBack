@@ -11,7 +11,7 @@ var points : int = 10
 var health := max_health
 
 func on_collision(velocity: Vector2) -> int:
-	health -= velocity.length() / 10
+	health -= velocity.length() * Globals.player.damage_scale_factor
 	$HealthBar/Background/Fill.anchor_right = float(health) / max_health
 	if health <= 0:
 		queue_free()

@@ -6,9 +6,11 @@ var click_held: bool
 var remaining_flings: int = 25
 
 var speed_scale_factor: float = 320
+var damage_scale_factor: float = 0.05
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	Globals.player = self
 	$AnimatedSprite2D.play("idle_front")
 
 func _input(event: InputEvent) -> void:
