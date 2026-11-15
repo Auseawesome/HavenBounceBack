@@ -16,23 +16,35 @@ func _ready() -> void:
 	$AnimatedSprite2D.play("idle_front")
 
 func _input(event: InputEvent) -> void:
+	if event is InputEventMouseMotion:
+		draw_arrow()
+	
 	if event is not InputEventMouseButton or event.button_index != MOUSE_BUTTON_LEFT:
 		return
 	
 	if event.pressed:
 		start_fling()
+		draw_arrow()
 		return
 	
 	if click_held:
 		handle_fling()
 
+func draw_arrow() -> void:
+	var angle = (-get_local_mouse_position()).angle()
+	
+	$ArrowViewer.position = Vector2(160, 0).rotated(angle) - Vector2(128, 128)
+	$ArrowViewer/ScaledArrowRenderer/DirectionArrow.rotation = angle
+
 func start_fling() -> void:
 	if click_listen:
 		click_held = true
 		$DragMax.visible = true
+		$ArrowViewer.visible = true
 
 func handle_fling() -> void:
 	$DragMax.visible = false
+	$ArrowViewer.visible = false
 	
 	var fling_vec := -get_local_mouse_position()
 	print(fling_vec)
