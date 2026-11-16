@@ -16,6 +16,7 @@ var remaining_flings: int = 25
 var speed_scale_factor: float = 320
 var damage_scale_factor: float = 0.05
 var redirection_responsiveness: float = 0.5
+var bounciness: float = 0.5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -94,6 +95,8 @@ func _on_click_area_exit() -> void:
 	click_listen = false
 
 func _on_collision(body: Node) -> void:
+	linear_velocity *= bounciness
+	
 	if body is not Obstacle:
 		return;
 	
