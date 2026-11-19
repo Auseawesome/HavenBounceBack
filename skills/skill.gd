@@ -1,3 +1,4 @@
+@abstract
 class_name Skill
 extends Resource
 
@@ -7,11 +8,11 @@ var desc: String
 @export
 var cost: CostProvider
 
-func canUpgradeSkill() -> bool:
-	return false
+@abstract
+func canUpgradeSkill() -> bool
 
-func applySkill(traits: Dictionary[String, Trait]) -> void:
-	pass
+@abstract
+func applySkill(traits: Dictionary[String, Trait]) -> void
 
-func getShopMessage() -> String:
-	return "Unimplemented"
+@abstract
+func getShopMessage() -> String
