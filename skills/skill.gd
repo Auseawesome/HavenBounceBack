@@ -15,6 +15,9 @@ var cost: CostProvider
 func can_upgrade_skill() -> bool
 
 @abstract
+func upgrade_skill() -> bool
+
+@abstract
 func apply_skill(traits: Dictionary[String, Trait]) -> void
 
 @abstract

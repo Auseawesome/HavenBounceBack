@@ -28,6 +28,7 @@ func _init() -> void:
 	inner_button.set_anchors_preset(PRESET_FULL_RECT)
 	inner_button.name = "Skill Button"
 	inner_button.expand_icon = true
+	inner_button.pressed.connect(_on_button_pressed)
 	add_child(inner_button, false, Node.INTERNAL_MODE_BACK)
 	update_size()
 	
@@ -105,3 +106,14 @@ func _notification(what: int) -> void:
 		NOTIFICATION_TRANSFORM_CHANGED:
 			skill_moved.emit()
 			update_dependency_lines()
+
+func _on_button_pressed() -> void:
+	var cost = skill.cost.get_value()
+	
+	if cost > Globals.skill_tree.current_points:
+		return
+	if not skill.can_upgrade_skill():
+		return
+		
+	skill.upgrade_skill()
+	Globals.skill_tree.current_points -= cost

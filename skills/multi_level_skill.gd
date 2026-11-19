@@ -10,5 +10,12 @@ var current_level: int = 0
 func can_upgrade_skill() -> bool:
 	return current_level < max_level
 
+func upgrade_skill() -> bool:
+	if not can_upgrade_skill():
+		return false
+	
+	current_level += 1
+	return true
+
 func get_shop_message() -> String:
 	return resource_name + " Level: " + str(current_level) + "/" + str(max_level)
