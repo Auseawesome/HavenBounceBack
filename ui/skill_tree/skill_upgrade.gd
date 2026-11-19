@@ -51,11 +51,31 @@ func update_dependency_lines() -> void:
 		if not is_instance_valid(dependency):
 			dependency_lines[i] = null
 			continue
-		var centre_pos
 		
-		var line = Line2D.new()
+		var line := Line2D.new()
+		
+		var line_start := size/2
+		var line_end := dependency.position - position + dependency.size/2
+		
+		var join_vec := line_start - line_end
+		var join_angle := join_vec.angle()
+		
+		var arrow_start := (line_start + line_end) / 2
+		var arrow_start_offset := arrow_start + Vector2(0.1, 0).rotated(join_angle)
+		
+		var arrow_top := arrow_start + Vector2(-32, 32).rotated(join_angle)
+		var arrow_bottom := arrow_start + Vector2(-32, -32).rotated(join_angle)
+		
 		line.z_index = -1
-		line.points = [size/2, dependency.position - position + dependency.size/2]
+		line.points = [
+			line_start,
+			arrow_start,
+			arrow_top,
+			arrow_start_offset,
+			arrow_bottom,
+			arrow_start,
+			line_end
+		]
 		add_child(line, false, Node.INTERNAL_MODE_FRONT)
 		
 		dependency_lines[i] = line
