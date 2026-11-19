@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://de3vn8bw8afmi" path="res://ui/skill_tree/skill_tree_contents.gd" id="1_38owx"]
 [ext_resource type="Resource" uid="uid://rkrwxw1e8j0x" path="res://skills/all_skills/a_new_slime.tres" id="3_ddacy"]
 [ext_resource type="Script" uid="uid://bk7mkgs6cdmm6" path="res://ui/skill_tree/skill_upgrade.gd" id="3_rst24"]
+[ext_resource type="Resource" uid="uid://dldoj348efgy3" path="res://skills/all_skills/sharp_vengeance.tres" id="4_gjyfs"]
 
 [node name="SkillTreeContents" type="Control" unique_id=1464612974]
 layout_mode = 3
@@ -45,7 +46,7 @@ offset_top = 419.0
 offset_right = 413.0
 offset_bottom = 555.0
 script = ExtResource("3_rst24")
-skill = ExtResource("3_ddacy")
+skill = ExtResource("4_gjyfs")
 dependencies = [NodePath("../SkillUpgrade")]
 metadata/_custom_type_script = "uid://bk7mkgs6cdmm6"
 
