@@ -1,6 +1,5 @@
 [gd_scene format=3 uid="uid://ca12f1v147pb6"]
 
-[ext_resource type="PackedScene" uid="uid://bhu4yt14iodwx" path="res://levels/template_level.tscn" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://bp0vgsh2rrhvn" path="res://ui/main_menu.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://ckh5qrfxnbncj" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cibfdhuc8bipr" path="res://ui/skill_tree/skill_tree.tscn" id="3_1bvp3"]
@@ -17,9 +16,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ig7tw")
-
-[node name="TemplateLevel" parent="MainMenu" unique_id=1480404076 instance=ExtResource("1_0xm2m")]
-position = Vector2(0, -256)
 
 [node name="ColorRect" type="ColorRect" parent="MainMenu" unique_id=713369592]
 layout_mode = 1
