@@ -8,7 +8,6 @@ const VIEWPORT_SIZE_VEC = Vector2(VIEWPORT_SIZE, VIEWPORT_SIZE)
 @onready var arrow_rotator := $ArrowViewer/ScaledArrowRenderer/ArrowRotator
 @onready var direction_arrow := $ArrowViewer/ScaledArrowRenderer/ArrowRotator/DirectionArrow
 
-var click_listen: bool
 var click_held: bool
 
 var remaining_flings: int = 25
@@ -62,7 +61,9 @@ func draw_arrow() -> void:
 	arrow_rotator.rotation = angle
 
 func start_fling() -> void:
-	if click_listen:
+	var mousePos = get_local_mouse_position()
+	
+	if mousePos.length_squared() < 10000:
 		click_held = true
 		$DragMax.visible = true
 		$ArrowViewer.visible = true
@@ -87,12 +88,6 @@ func handle_fling() -> void:
 	$"Control/Label".text = "Flings Remaining: " + str(remaining_flings)
 	if remaining_flings < 0:
 		Globals.exit_level()
-
-func _on_click_area_enter() -> void:
-	click_listen = true
-
-func _on_click_area_exit() -> void:
-	click_listen = false
 
 func _on_collision(body: Node) -> void:
 	linear_velocity *= bounciness
