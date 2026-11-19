@@ -5,7 +5,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p7dgv"]
 radius = 6.0
-height = 20.0
+height = 18.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qi21q"]
 size = Vector2(16, 12)
@@ -20,7 +20,7 @@ texture = ExtResource("2_3clqr")
 region_rect = Rect2(208, 32, 16, 16)
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=396573896]
-position = Vector2(0, 0)
+position = Vector2(1, 0)
 shape = SubResource("CapsuleShape2D_p7dgv")
 
 [node name="HealthBar" parent="." index="3" unique_id=1951282074]
