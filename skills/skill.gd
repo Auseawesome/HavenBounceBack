@@ -4,6 +4,9 @@ extends Resource
 @export_custom(PROPERTY_HINT_MULTILINE_TEXT, "")
 var desc: String
 
+@export
+var cost: CostProvider
+
 func canUpgradeSkill() -> bool:
 	return false
 
