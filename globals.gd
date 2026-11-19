@@ -16,6 +16,8 @@ func enter_level() -> void:
 	skill_tree.visible = false
 	
 	world.set_world_height(2592)
+	
+	Globals.skill_tree.prepare_traits()
 
 func exit_level() -> void:
 	world.queue_free()

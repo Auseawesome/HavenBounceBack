@@ -18,4 +18,7 @@ func upgrade_skill() -> bool:
 	return true
 
 func get_shop_message() -> String:
+	return str(self)
+
+func _to_string() -> String:
 	return resource_name + " Level: " + str(current_level) + "/" + str(max_level)
