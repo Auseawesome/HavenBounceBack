@@ -17,7 +17,6 @@ func _ready() -> void:
 	Globals.skill_tree = self
 	$LevelEnterButton.pressed.connect(Globals.enter_level)
 
-# Doesn't appear to work for some reason?
 func prepare_traits() -> void:
 	for default_trait in default_traits:
 		traits[default_trait.id] = default_trait.duplicate()

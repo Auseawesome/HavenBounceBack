@@ -11,13 +11,13 @@ var world_scene := preload("res://world/world.tscn")
 var world: World
 
 func enter_level() -> void:
+	Globals.skill_tree.prepare_traits()
+	
 	world = world_scene.instantiate()
 	main.add_child(world)
 	skill_tree.visible = false
 	
 	world.set_world_height(2592)
-	
-	Globals.skill_tree.prepare_traits()
 
 func exit_level() -> void:
 	world.queue_free()
