@@ -1,7 +1,12 @@
 [gd_resource type="Resource" script_class="IntIncreaseSkill" format=3 uid="uid://rkrwxw1e8j0x"]
 
 [ext_resource type="Script" uid="uid://bd4ibmrfedgo0" path="res://skills/int_increase_skill.gd" id="1_6lwia"]
+[ext_resource type="Resource" uid="uid://dthn4mra4s73o" path="res://skills/trait/all_traits/flings.tres" id="2_nmpk7"]
 
 [resource]
 script = ExtResource("1_6lwia")
+target_trait = ExtResource("2_nmpk7")
+base_increase = 1
+max_level = 15
+desc = "A new start for slime-kind, work on bulking up a bit so you can last for longer out there!"
 metadata/_custom_type_script = "uid://bd4ibmrfedgo0"
