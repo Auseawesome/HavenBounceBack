@@ -9,10 +9,10 @@ var desc: String
 var cost: CostProvider
 
 @abstract
-func canUpgradeSkill() -> bool
+func can_upgrade_skill() -> bool
 
 @abstract
-func applySkill(traits: Dictionary[String, Trait]) -> void
+func apply_skill(traits: Dictionary[String, Trait]) -> void
 
 @abstract
-func getShopMessage() -> String
+func get_shop_message() -> String

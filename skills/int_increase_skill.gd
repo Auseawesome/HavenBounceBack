@@ -13,7 +13,7 @@ var mult_increase: int = 0
 @export
 var bonus_increase: int = 0
 
-func applySkill(traits: Dictionary[String, Trait]) -> void:
+func apply_skill(traits: Dictionary[String, Trait]) -> void:
 	var retrieved_trait: IntTrait = traits[target_trait.id]
 	
 	retrieved_trait.base_value += base_increase * current_level
