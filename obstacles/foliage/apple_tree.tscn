@@ -7,8 +7,8 @@ radius = 26.0
 height = 56.0
 
 [node name="AppleTree" unique_id=841894801 instance=ExtResource("1_rgfyn")]
-max_health = 50
-points = 20
+max_health = 150
+points = 25
 
 [node name="Sprite2D" parent="." index="0" unique_id=2041058344]
 position = Vector2(0, -24)

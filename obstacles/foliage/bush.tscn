@@ -10,7 +10,8 @@ height = 24.0
 radius = 12.0
 
 [node name="Bush" unique_id=841894801 instance=ExtResource("1_8p6xh")]
-max_health = 15
+max_health = 20
+points = 5
 
 [node name="Sprite2D" parent="." index="0" unique_id=2041058344]
 position = Vector2(0, -2)

@@ -12,8 +12,8 @@ radius = 6.0
 height = 22.0
 
 [node name="Pig" unique_id=841894801 instance=ExtResource("1_foujj")]
-max_health = 150
-points = 50
+max_health = 50
+points = 35
 
 [node name="Sprite2D" parent="." index="0" unique_id=2041058344]
 position = Vector2(0, -5)
