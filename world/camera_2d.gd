@@ -12,4 +12,3 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	position.y = clamp(player.position.y, world.SCREEN_SIZE/2, world.world_height + world.SCREEN_SIZE/2)
-	Globals.skill_points_label.position.y = position.y - world.SCREEN_SIZE/2 + 10
