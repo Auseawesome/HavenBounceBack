@@ -10,7 +10,7 @@ const VIEWPORT_SIZE_VEC = Vector2(VIEWPORT_SIZE, VIEWPORT_SIZE)
 
 var click_held: bool
 
-var traits := Traits.new()
+var traits: Traits
 
 var remaining_flings: int
 
@@ -18,6 +18,7 @@ var remaining_flings: int
 func _ready() -> void:
 	Globals.player = self
 	$AnimatedSprite2D.play("idle_front")
+	traits = Globals.skill_tree.traits
 	remaining_flings = traits.flings
 
 func _input(event: InputEvent) -> void:

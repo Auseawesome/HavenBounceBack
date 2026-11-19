@@ -1,6 +1,8 @@
 class_name SkillTree
 extends Control
 
+var traits := Traits.new()
+
 var current_points: int :
 	set(value):
 		current_points = value
