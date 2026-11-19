@@ -13,6 +13,10 @@ var obscured_material: Material
 @onready
 var health := max_health
 
+func _ready() -> void:
+	if (fmod(position.x, 1) != 0 or fmod(position.y, 1) != 0):
+		print(self, " does not have a centered position")
+
 func on_collision(velocity: Vector2) -> int:
 	var damage_factor: float = Globals.skill_tree.traits.damage_factor.get_value()
 	var damage_exp: float = Globals.skill_tree.traits.damage_exponent.get_value()
