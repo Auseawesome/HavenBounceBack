@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://xqav88ne5bdn" path="res://skills/cost_providers/constant_provider.gd" id="1_1oq4s"]
 [ext_resource type="Script" uid="uid://c5cq4io6m8djf" path="res://skills/float_increase_skill.gd" id="1_2yys2"]
 [ext_resource type="Texture2D" uid="uid://tuy3v6455efn" path="res://sprites/skills/sharp_vengeance.png" id="2_hg1ey"]
+[ext_resource type="Resource" uid="uid://cbe0b1v2d2aj3" path="res://skills/trait/all_traits/damage_factor.tres" id="4_hg1ey"]
 
 [sub_resource type="Resource" id="Resource_dyy1w"]
 script = ExtResource("1_1oq4s")
@@ -12,6 +13,7 @@ metadata/_custom_type_script = "uid://xqav88ne5bdn"
 [resource]
 resource_name = "Sharp Vengeance"
 script = ExtResource("1_2yys2")
+target_trait = ExtResource("4_hg1ey")
 base_increase = 5.0
 icon = ExtResource("2_hg1ey")
 desc = "Channel your anger into more base damage!"
