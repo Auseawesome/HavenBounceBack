@@ -2,6 +2,9 @@
 class_name Skill
 extends Resource
 
+@export
+var icon: Texture2D
+
 @export_custom(PROPERTY_HINT_MULTILINE_TEXT, "")
 var desc: String
 
