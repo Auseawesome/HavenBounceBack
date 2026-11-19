@@ -10,17 +10,15 @@ const VIEWPORT_SIZE_VEC = Vector2(VIEWPORT_SIZE, VIEWPORT_SIZE)
 
 var click_held: bool
 
-var remaining_flings: int = 25
+var traits := Traits.new()
 
-var speed_scale_factor: float = 320
-var damage_scale_factor: float = 0.05
-var redirection_responsiveness: float = 0.5
-var bounciness: float = 0.5
+var remaining_flings: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	Globals.player = self
 	$AnimatedSprite2D.play("idle_front")
+	remaining_flings = traits.flings
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -74,13 +72,13 @@ func handle_fling() -> void:
 	
 	var fling_vec := -get_local_mouse_position()
 	var clamped_fling_vec := fling_vec.normalized() * get_clamped_fling_length(fling_vec)
-	var fling_velocity := clamped_fling_vec * speed_scale_factor
+	var fling_velocity := clamped_fling_vec * traits.speed_scale_factor
 	
 	# Keep old velocity only if moving in similar direction to new velocity
 	# velocity_keep_factor ranges between (1 - redirection_responsiveness) and 1
 	var norm_fling := fling_velocity.normalized()
 	var norm_velocity := linear_velocity.normalized()
-	var velocity_keep_factor := (norm_velocity.dot(norm_fling) - 1) * (redirection_responsiveness) / 2 + 1
+	var velocity_keep_factor := (norm_velocity.dot(norm_fling) - 1) * (traits.redirection_responsiveness) / 2 + 1
 	linear_velocity = fling_velocity + (velocity_keep_factor * linear_velocity)
 	
 	click_held = false
@@ -90,7 +88,7 @@ func handle_fling() -> void:
 		Globals.exit_level()
 
 func _on_collision(body: Node) -> void:
-	linear_velocity *= bounciness
+	linear_velocity *= traits.bounciness
 	
 	if body is not Obstacle:
 		return;
