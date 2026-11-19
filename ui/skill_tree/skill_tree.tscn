@@ -2,6 +2,13 @@
 
 [ext_resource type="Script" uid="uid://dibghben1f6xc" path="res://ui/skill_tree/skill_tree.gd" id="1_i5h8e"]
 [ext_resource type="PackedScene" uid="uid://cd8al0mb2dja0" path="res://ui/skill_tree/skill_tree_contents.tscn" id="2_gdo5q"]
+[ext_resource type="Script" uid="uid://gwbaa2bwsxhx" path="res://skills/trait/trait.gd" id="2_lfut3"]
+[ext_resource type="Resource" uid="uid://c3u0qsb4u6jnn" path="res://skills/trait/all_traits/bounciness.tres" id="3_fn1xa"]
+[ext_resource type="Resource" uid="uid://boakjiogeyww0" path="res://skills/trait/all_traits/damage_exponent.tres" id="4_ufdbp"]
+[ext_resource type="Resource" uid="uid://cbe0b1v2d2aj3" path="res://skills/trait/all_traits/damage_factor.tres" id="5_0al5m"]
+[ext_resource type="Resource" uid="uid://dthn4mra4s73o" path="res://skills/trait/all_traits/flings.tres" id="6_0k54q"]
+[ext_resource type="Resource" uid="uid://opj8k3uo1l0i" path="res://skills/trait/all_traits/redirection_responsiveness.tres" id="7_3x14x"]
+[ext_resource type="Resource" uid="uid://3ombqqsbsacq" path="res://skills/trait/all_traits/speed.tres" id="8_y70dy"]
 
 [node name="SkillTree" type="Control" unique_id=497354055]
 layout_mode = 3
@@ -11,6 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_i5h8e")
+default_traits = Array[ExtResource("2_lfut3")]([ExtResource("3_fn1xa"), ExtResource("4_ufdbp"), ExtResource("5_0al5m"), ExtResource("6_0k54q"), ExtResource("7_3x14x"), ExtResource("8_y70dy")])
 metadata/_custom_type_script = "uid://dibghben1f6xc"
 
 [node name="Label" type="Label" parent="." unique_id=688764210]

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="IntTrait" format=3 uid="uid://dthn4mra4s73o"]
+
+[ext_resource type="Script" uid="uid://bfpg0vg3kfv6d" path="res://skills/trait/int_trait.gd" id="1_lhvsa"]
+
+[resource]
+script = ExtResource("1_lhvsa")
+base_value = 10
+id = "flings"
+desc = "The number of flings your slime can sustain before disintegrating."
+dev_notes = "This is used as the main gameplay loop and 'health' system."
+metadata/_custom_type_script = "uid://bfpg0vg3kfv6d"

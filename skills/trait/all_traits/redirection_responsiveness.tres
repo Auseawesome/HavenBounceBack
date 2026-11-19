@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="FloatTrait" format=3 uid="uid://opj8k3uo1l0i"]
+
+[ext_resource type="Script" uid="uid://dn5w32svarqyh" path="res://skills/trait/float_trait.gd" id="1_wf7jr"]
+
+[resource]
+script = ExtResource("1_wf7jr")
+base_value = 0.5
+post_mult = -1.0
+bonus_value = 1.0
+id = "redirection_responsiveness"
+desc = "Controls how much velocity is cancelled when attempting to redirect movement."
+dev_notes = "Exponent and base value should be the only things that are changed for this trait.
+
+Base value needs to be below 1.0."
+metadata/_custom_type_script = "uid://dn5w32svarqyh"

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="FloatTrait" format=3 uid="uid://cbe0b1v2d2aj3"]
+
+[ext_resource type="Script" uid="uid://dn5w32svarqyh" path="res://skills/trait/float_trait.gd" id="1_6msf7"]
+
+[resource]
+script = ExtResource("1_6msf7")
+base_value = 50.0
+id = "damage_factor"
+desc = "Damage multiplier, total damage is based on velocity."
+dev_notes = "This damage factor does not directly correlate to damage dealt. The velocity has to be multiplied by a constant factor to make it more reasonable.
+
+The damage exponent applies after this and causes damage to scale non-linearly with velocity."
+metadata/_custom_type_script = "uid://dn5w32svarqyh"
