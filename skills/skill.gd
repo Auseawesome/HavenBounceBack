@@ -1,7 +1,10 @@
 class_name Skill
 extends Resource
 
-func applySkill(traits: Traits) -> void:
+func canUpgradeSkill() -> bool:
+	return false
+
+func applySkill(traits: Dictionary[String, Trait]) -> void:
 	pass
 
 func getShopMessage() -> String:

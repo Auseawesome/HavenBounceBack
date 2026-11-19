@@ -14,6 +14,6 @@ var current_points: int :
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	for default_trait in default_traits:
-		traits[default_trait.id] = default_trait
+		traits[default_trait.id] = default_trait.duplicate()
 	Globals.skill_tree = self
 	$LevelEnterButton.pressed.connect(Globals.enter_level)

@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="IntIncreaseSkill" format=3 uid="uid://rkrwxw1e8j0x"]
+
+[ext_resource type="Script" uid="uid://bd4ibmrfedgo0" path="res://skills/int_increase_skill.gd" id="1_6lwia"]
+
+[resource]
+script = ExtResource("1_6lwia")
+metadata/_custom_type_script = "uid://bd4ibmrfedgo0"
