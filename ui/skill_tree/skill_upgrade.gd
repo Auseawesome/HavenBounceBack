@@ -60,7 +60,7 @@ func update_dependency_lines() -> void:
 		var join_vec := line_start - line_end
 		var join_angle := join_vec.angle()
 		
-		var arrow_start := (line_start + line_end) / 2
+		var arrow_start := (line_start + line_end + Vector2(16, 0).rotated(join_angle)) / 2
 		var arrow_start_offset := arrow_start + Vector2(0.1, 0).rotated(join_angle)
 		
 		var arrow_top := arrow_start + Vector2(-32, 32).rotated(join_angle)
