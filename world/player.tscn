@@ -235,7 +235,7 @@ anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 23.0
 grow_horizontal = 2
-text = "Flings Remaining: 25"
+text = "Flings Remaining: ?"
 horizontal_alignment = 1
 
 [node name="DragMax" type="Sprite2D" parent="." unique_id=2115133345]

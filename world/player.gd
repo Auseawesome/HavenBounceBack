@@ -20,6 +20,7 @@ func _ready() -> void:
 	Globals.player = self
 	$AnimatedSprite2D.play("idle_front")
 	remaining_flings = traits.flings.get_value()
+	update_label_text()
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion:
@@ -85,9 +86,12 @@ func handle_fling() -> void:
 	
 	click_held = false
 	remaining_flings -= 1
-	$"Control/Label".text = "Flings Remaining: " + str(remaining_flings)
+	update_label_text()
 	if remaining_flings < 0:
 		Globals.exit_level()
+
+func update_label_text() -> void:
+	$"Control/Label".text = "Flings Remaining: " + str(remaining_flings)
 
 func _on_collision(body: Node) -> void:
 	linear_velocity *= traits.bounciness.get_value()
