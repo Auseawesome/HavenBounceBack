@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="FloatIncreaseSkill" format=3 uid="uid://pnsovks07lkq"]
+
+[ext_resource type="Script" uid="uid://xqav88ne5bdn" path="res://skills/cost_providers/constant_provider.gd" id="1_an3a7"]
+[ext_resource type="Script" uid="uid://c5cq4io6m8djf" path="res://skills/float_increase_skill.gd" id="1_r5lok"]
+[ext_resource type="Texture2D" uid="uid://c1rf774wvf585" path="res://sprites/skills/sprinting_start.png" id="2_3iblb"]
+[ext_resource type="Resource" uid="uid://3ombqqsbsacq" path="res://skills/trait/all_traits/speed.tres" id="4_srydh"]
+
+[sub_resource type="Resource" id="Resource_054as"]
+script = ExtResource("1_an3a7")
+cost = 15
+metadata/_custom_type_script = "uid://xqav88ne5bdn"
+
+[resource]
+resource_name = "Sprinting Start"
+script = ExtResource("1_r5lok")
+target_trait = ExtResource("4_srydh")
+base_increase = 16.0
+max_level = 10
+icon = ExtResource("2_3iblb")
+desc = "Gain some extra fling speed and smash into obstacles even harder!"
+cost = SubResource("Resource_054as")
+metadata/_custom_type_script = "uid://c5cq4io6m8djf"

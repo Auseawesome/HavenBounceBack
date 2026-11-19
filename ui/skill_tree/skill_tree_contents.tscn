@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://rkrwxw1e8j0x" path="res://skills/all_skills/a_new_slime.tres" id="3_ddacy"]
 [ext_resource type="Script" uid="uid://bk7mkgs6cdmm6" path="res://ui/skill_tree/skill_upgrade.gd" id="3_rst24"]
 [ext_resource type="Resource" uid="uid://dldoj348efgy3" path="res://skills/all_skills/sharp_vengeance.tres" id="4_gjyfs"]
+[ext_resource type="Resource" uid="uid://pnsovks07lkq" path="res://skills/all_skills/sprinting_start.tres" id="5_s23nm"]
 
 [node name="SkillTreeContents" type="Control" unique_id=1464612974]
 layout_mode = 3
@@ -14,49 +15,37 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_38owx")
 
-[node name="SkillUpgrade4" type="Control" parent="." unique_id=255259197 node_paths=PackedStringArray("dependencies")]
+[node name="ANewSlime" type="Control" parent="." unique_id=1152341308]
 custom_minimum_size = Vector2(136, 136)
 anchors_preset = 0
-offset_left = 597.0
-offset_top = 69.0
-offset_right = 733.0
-offset_bottom = 205.0
+offset_left = 697.0
+offset_top = 457.0
+offset_right = 833.0
+offset_bottom = 593.0
 script = ExtResource("3_rst24")
 skill = ExtResource("3_ddacy")
-dependencies = [NodePath("../SkillUpgrade2"), NodePath("../SkillUpgrade3")]
 metadata/_custom_type_script = "uid://bk7mkgs6cdmm6"
 
-[node name="SkillUpgrade3" type="Control" parent="." unique_id=1379219734 node_paths=PackedStringArray("dependencies")]
+[node name="SharpVengeance" type="Control" parent="ANewSlime" unique_id=1610858825 node_paths=PackedStringArray("dependencies")]
 custom_minimum_size = Vector2(136, 136)
 anchors_preset = 0
-offset_left = 976.0
-offset_top = 263.0
-offset_right = 1112.0
-offset_bottom = 399.0
-script = ExtResource("3_rst24")
-skill = ExtResource("3_ddacy")
-dependencies = [NodePath("../SkillUpgrade")]
-metadata/_custom_type_script = "uid://bk7mkgs6cdmm6"
-
-[node name="SkillUpgrade2" type="Control" parent="." unique_id=1610858825 node_paths=PackedStringArray("dependencies")]
-custom_minimum_size = Vector2(136, 136)
-anchors_preset = 0
-offset_left = 277.0
-offset_top = 419.0
-offset_right = 413.0
-offset_bottom = 555.0
+offset_left = -272.0
+offset_top = -272.0
+offset_right = -136.0
+offset_bottom = -136.0
 script = ExtResource("3_rst24")
 skill = ExtResource("4_gjyfs")
-dependencies = [NodePath("../SkillUpgrade")]
+dependencies = [NodePath("..")]
 metadata/_custom_type_script = "uid://bk7mkgs6cdmm6"
 
-[node name="SkillUpgrade" type="Control" parent="." unique_id=1152341308]
+[node name="SprintingStart" type="Control" parent="ANewSlime" unique_id=1379219734 node_paths=PackedStringArray("dependencies")]
 custom_minimum_size = Vector2(136, 136)
 anchors_preset = 0
-offset_left = 743.0
-offset_top = 619.0
-offset_right = 879.0
-offset_bottom = 755.0
+offset_left = 272.0
+offset_top = -272.0
+offset_right = 408.0
+offset_bottom = -136.0
 script = ExtResource("3_rst24")
-skill = ExtResource("3_ddacy")
+skill = ExtResource("5_s23nm")
+dependencies = [NodePath("..")]
 metadata/_custom_type_script = "uid://bk7mkgs6cdmm6"

@@ -15,6 +15,7 @@ resource_name = "Sharp Vengeance"
 script = ExtResource("1_2yys2")
 target_trait = ExtResource("4_hg1ey")
 base_increase = 5.0
+max_level = 10
 icon = ExtResource("2_hg1ey")
 desc = "Channel your anger into more base damage!"
 cost = SubResource("Resource_dyy1w")
