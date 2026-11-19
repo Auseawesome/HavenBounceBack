@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="FloatTrait" format=3 uid="uid://cbe0b1v2d2aj3"]
 
-[ext_resource type="Script" uid="uid://dn5w32svarqyh" path="res://skills/trait/float_trait.gd" id="1_6msf7"]
+[ext_resource type="Script" uid="uid://dn5w32svarqyh" path="res://skills/trait/float_trait.gd" id="1_mo0y1"]
 
 [resource]
-script = ExtResource("1_6msf7")
+resource_name = "Damage Factor"
+script = ExtResource("1_mo0y1")
 base_value = 50.0
 id = "damage_factor"
 desc = "Damage multiplier, total damage is based on velocity."

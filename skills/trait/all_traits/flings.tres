@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="IntTrait" format=3 uid="uid://dthn4mra4s73o"]
 
-[ext_resource type="Script" uid="uid://bfpg0vg3kfv6d" path="res://skills/trait/int_trait.gd" id="1_lhvsa"]
+[ext_resource type="Script" uid="uid://bfpg0vg3kfv6d" path="res://skills/trait/int_trait.gd" id="1_tfgcf"]
 
 [resource]
-script = ExtResource("1_lhvsa")
+resource_name = "Flings"
+script = ExtResource("1_tfgcf")
 base_value = 10
 id = "flings"
 desc = "The number of flings your slime can sustain before disintegrating."

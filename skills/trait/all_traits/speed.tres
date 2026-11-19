@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="FloatTrait" format=3 uid="uid://3ombqqsbsacq"]
 
-[ext_resource type="Script" uid="uid://dn5w32svarqyh" path="res://skills/trait/float_trait.gd" id="1_ap7a4"]
+[ext_resource type="Script" uid="uid://dn5w32svarqyh" path="res://skills/trait/float_trait.gd" id="1_pnsva"]
 
 [resource]
-script = ExtResource("1_ap7a4")
+resource_name = "Speed"
+script = ExtResource("1_pnsva")
 base_value = 320.0
 id = "speed"
 desc = "Controls the velocity added after flinging the player."

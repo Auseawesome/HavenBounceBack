@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="FloatTrait" format=3 uid="uid://boakjiogeyww0"]
 
-[ext_resource type="Script" uid="uid://dn5w32svarqyh" path="res://skills/trait/float_trait.gd" id="1_gfg8t"]
+[ext_resource type="Script" uid="uid://dn5w32svarqyh" path="res://skills/trait/float_trait.gd" id="1_6pu64"]
 
 [resource]
-script = ExtResource("1_gfg8t")
+resource_name = "Damage Exponent"
+script = ExtResource("1_6pu64")
 base_value = 1.0
 id = "damage_exponent"
 desc = "Scales damage faster based on velocity. Gives a bonus for extra speed."

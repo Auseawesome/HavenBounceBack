@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="FloatTrait" format=3 uid="uid://c3u0qsb4u6jnn"]
 
-[ext_resource type="Script" uid="uid://dn5w32svarqyh" path="res://skills/trait/float_trait.gd" id="1_oi00e"]
+[ext_resource type="Script" uid="uid://dn5w32svarqyh" path="res://skills/trait/float_trait.gd" id="1_yxewh"]
 
 [resource]
-script = ExtResource("1_oi00e")
+resource_name = "Bounciness"
+script = ExtResource("1_yxewh")
 base_value = 0.5
 post_mult = -1.0
 bonus_value = 1.0

@@ -10,6 +10,7 @@ cost = 10
 metadata/_custom_type_script = "uid://xqav88ne5bdn"
 
 [resource]
+resource_name = "A New Slime"
 script = ExtResource("1_6lwia")
 target_trait = ExtResource("2_nmpk7")
 base_increase = 1

@@ -1,9 +1,10 @@
 [gd_resource type="Resource" script_class="FloatTrait" format=3 uid="uid://opj8k3uo1l0i"]
 
-[ext_resource type="Script" uid="uid://dn5w32svarqyh" path="res://skills/trait/float_trait.gd" id="1_wf7jr"]
+[ext_resource type="Script" uid="uid://dn5w32svarqyh" path="res://skills/trait/float_trait.gd" id="1_iks6h"]
 
 [resource]
-script = ExtResource("1_wf7jr")
+resource_name = "Redirection Responsiveness"
+script = ExtResource("1_iks6h")
 base_value = 0.5
 post_mult = -1.0
 bonus_value = 1.0
