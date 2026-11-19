@@ -14,7 +14,9 @@ var obscured_material: Material
 var health := max_health
 
 func on_collision(velocity: Vector2) -> int:
-	health -= velocity.length() * Globals.player.traits.damage_scale_factor
+	var damage = velocity.length() * Globals.player.traits.damage_scale_factor
+	damage = pow(damage, Globals.player.traits.damage_scale_exponent)
+	health -= damage
 	$HealthBar.visible = true
 	$ShowHealthTimer.start()
 	$HealthBar/Background/Fill.anchor_right = float(health) / max_health
