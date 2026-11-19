@@ -55,7 +55,7 @@ func update_dependency_lines() -> void:
 		var line := Line2D.new()
 		
 		var line_start := size/2
-		var line_end := dependency.position - position + dependency.size/2
+		var line_end := dependency.global_position - global_position + dependency.size/2
 		
 		var join_vec := line_start - line_end
 		var join_angle := join_vec.angle()
