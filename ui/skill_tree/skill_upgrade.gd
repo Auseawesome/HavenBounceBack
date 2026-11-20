@@ -192,6 +192,7 @@ func update_visibility() -> void:
 		current_visibility_state = SkillVisibilityState.NOT_BOUGHT
 		visible = true
 		inner_button.self_modulate = Color.DARK_GRAY
+		skill_state_changed.emit()
 		return
 	
 	if current_visibility_state == SkillVisibilityState.GREY:
@@ -206,6 +207,7 @@ func update_visibility() -> void:
 			current_visibility_state = SkillVisibilityState.GREY
 			visible = true
 			inner_button.self_modulate = Color(0.25, 0.25, 0.25)
+			skill_state_changed.emit()
 			return
 		
 		var dep_grey := dependency.current_visibility_state == SkillVisibilityState.GREY
