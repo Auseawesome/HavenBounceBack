@@ -29,13 +29,15 @@ var all_dependencies_needed: bool
 var dependency_proportion_needed: float
 
 enum SkillVisibilityState {
-	UNKNOWN,
+	UNKNOWN = -1,
 	HIDDEN,
+	SILHOUETTE,
 	GREY,
+	NOT_BOUGHT,
 	REVEALED
 }
 
-var current_visibility_state: SkillVisibilityState
+var current_visibility_state := SkillVisibilityState.UNKNOWN
 
 var dependency_lines: Array[Line2D]
 
@@ -131,6 +133,9 @@ func _notification(what: int) -> void:
 			update_dependency_lines()
 
 func _on_button_pressed() -> void:
+	if current_visibility_state <= SkillVisibilityState.SILHOUETTE:
+		return
+	
 	Globals.skill_tree.update_skill_information(self)
 
 func dependencies_satisifed() -> bool:
@@ -174,25 +179,44 @@ func update_visibility() -> void:
 	if current_visibility_state == SkillVisibilityState.REVEALED:
 		return
 	
-	if dependencies_satisifed():
+	if skill.bought_at_least_once():
+		current_visibility_state = SkillVisibilityState.REVEALED
 		visible = true
-		inner_button.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
-		skill_state_changed.emit()
+		inner_button.self_modulate = Color.WHITE
+		return
+	
+	if current_visibility_state == SkillVisibilityState.NOT_BOUGHT:
+		return
+	
+	if dependencies_satisifed():
+		current_visibility_state = SkillVisibilityState.NOT_BOUGHT
+		visible = true
+		inner_button.self_modulate = Color.DARK_GRAY
 		return
 	
 	if current_visibility_state == SkillVisibilityState.GREY:
 		return
 	
 	for dependency in dependencies:
-		if dependency.dependencies_satisifed():
+		if dependency.current_visibility_state == SkillVisibilityState.UNKNOWN:
+			dependency.update_visibility()
+		
+		var dep_visible := dependency.current_visibility_state >= SkillVisibilityState.NOT_BOUGHT
+		if dep_visible:
+			current_visibility_state = SkillVisibilityState.GREY
 			visible = true
-			inner_button.self_modulate = Color(0.22, 0.22, 0.22, 1.0)
-			skill_state_changed.emit()
+			inner_button.self_modulate = Color(0.25, 0.25, 0.25)
 			return
+		
+		var dep_grey := dependency.current_visibility_state == SkillVisibilityState.GREY
+		var not_silhoutte := not current_visibility_state == SkillVisibilityState.SILHOUETTE
+		if not_silhoutte and dep_grey:
+			current_visibility_state = SkillVisibilityState.SILHOUETTE
+			visible = true
+			inner_button.self_modulate = Color.BLACK
 	
-	if current_visibility_state == SkillVisibilityState.HIDDEN:
+	if current_visibility_state == SkillVisibilityState.SILHOUETTE:
 		return
 	
+	current_visibility_state = SkillVisibilityState.HIDDEN
 	visible = false
-	skill_state_changed.emit()
-	return

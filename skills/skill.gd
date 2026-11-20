@@ -24,4 +24,7 @@ func apply_skill(traits: Dictionary[String, Trait]) -> void
 func get_shop_message() -> String
 
 @abstract
+func bought_at_least_once() -> bool
+
+@abstract
 func get_proportion_completed() -> float

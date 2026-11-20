@@ -23,5 +23,8 @@ func get_shop_message() -> String:
 func _to_string() -> String:
 	return resource_name + "\nLevel: " + str(current_level) + "/" + str(max_level)
 
+func bought_at_least_once() -> bool:
+	return current_level != 0
+
 func get_proportion_completed() -> float:
 	return float(current_level) / max_level

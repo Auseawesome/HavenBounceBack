@@ -60,7 +60,10 @@ func update_skill_information(upgrade: SkillUpgrade):
 	var skill := upgrade.skill
 	skill_title_label.text = skill.get_shop_message()
 	skill_description_label.text = skill.desc
-	skill_buy_button.text = "Buy (" + str(skill.cost.get_value()) + ")"
+	if upgrade.current_visibility_state >= SkillUpgrade.SkillVisibilityState.NOT_BOUGHT:
+		skill_buy_button.text = "Buy (" + str(skill.cost.get_value()) + ")"
+	else:
+		skill_buy_button.text = "Not Unlocked"
 	skill_title_container.calc_maximum_size()
 	selected_upgrade = upgrade
 
