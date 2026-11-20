@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://dldoj348efgy3" path="res://skills/all_skills/sharp_vengeance.tres" id="4_gjyfs"]
 [ext_resource type="Resource" uid="uid://pnsovks07lkq" path="res://skills/all_skills/sprinting_start.tres" id="5_s23nm"]
 [ext_resource type="Resource" uid="uid://cs0gdiqwojyh3" path="res://skills/all_skills/rightful_rebound.tres" id="6_e1xs4"]
+[ext_resource type="Resource" uid="uid://g8tec754t3" path="res://skills/all_skills/impact_enhancement.tres" id="7_p5x8s"]
 
 [node name="SkillTreeContents" type="Control" unique_id=419601330]
 custom_minimum_size = Vector2(849, 609)
@@ -64,5 +65,18 @@ offset_bottom = -136.0
 script = ExtResource("3_rst24")
 skill = ExtResource("6_e1xs4")
 dependencies = [NodePath("..")]
+dependency_proportion_needed = 0.5
+metadata/_custom_type_script = "uid://bk7mkgs6cdmm6"
+
+[node name="ANewSlime2" type="Control" parent="ANewSlime" unique_id=1644050075 node_paths=PackedStringArray("dependencies")]
+custom_minimum_size = Vector2(136, 136)
+anchors_preset = 0
+offset_top = -544.0
+offset_right = 136.0
+offset_bottom = -408.0
+script = ExtResource("3_rst24")
+skill = ExtResource("7_p5x8s")
+dependencies = [NodePath("../SharpVengeance"), NodePath("../SprintingStart")]
+all_dependencies_needed = true
 dependency_proportion_needed = 0.5
 metadata/_custom_type_script = "uid://bk7mkgs6cdmm6"

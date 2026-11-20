@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="FloatIncreaseSkill" format=3 uid="uid://g8tec754t3"]
+
+[ext_resource type="Script" uid="uid://xqav88ne5bdn" path="res://skills/cost_providers/constant_provider.gd" id="1_4pm0k"]
+[ext_resource type="Texture2D" uid="uid://byknlht3elpif" path="res://sprites/skills/impact_enhancement.png" id="2_4pm0k"]
+[ext_resource type="Script" uid="uid://c5cq4io6m8djf" path="res://skills/float_increase_skill.gd" id="3_63uly"]
+[ext_resource type="Resource" uid="uid://boakjiogeyww0" path="res://skills/trait/all_traits/damage_exponent.tres" id="4_obcjh"]
+
+[sub_resource type="Resource" id="Resource_dyy1w"]
+script = ExtResource("1_4pm0k")
+cost = 35
+metadata/_custom_type_script = "uid://xqav88ne5bdn"
+
+[resource]
+resource_name = "Sharp Vengeance"
+script = ExtResource("3_63uly")
+target_trait = ExtResource("4_obcjh")
+base_increase = 0.02
+max_level = 5
+icon = ExtResource("2_4pm0k")
+desc = "Do even more damage the faster you move!"
+cost = SubResource("Resource_dyy1w")
+metadata/_custom_type_script = "uid://c5cq4io6m8djf"
