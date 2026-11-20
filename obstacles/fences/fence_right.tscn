@@ -3,12 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://bqihy530r71g4" path="res://obstacles/obstacle_base.tscn" id="1_gklny"]
 [ext_resource type="Texture2D" uid="uid://dq2fltpqxaxsl" path="res://sprites/obstacles/exterior.png" id="2_78ptr"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p7dgv"]
-radius = 6.0
-height = 18.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lcbcp"]
+size = Vector2(6.999999, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x4lfa"]
+size = Vector2(15.999999, 7)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6e4fs"]
-size = Vector2(16, 12)
+size = Vector2(9, 9)
 
 [node name="FenceRight" unique_id=841894801 instance=ExtResource("1_gklny")]
 points = 5
@@ -19,15 +21,20 @@ texture = ExtResource("2_78ptr")
 region_rect = Rect2(224, 48, 16, 16)
 
 [node name="CollisionShape2D" parent="." index="1" unique_id=396573896]
-position = Vector2(0, 0)
-shape = SubResource("CapsuleShape2D_p7dgv")
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_lcbcp")
 
-[node name="HealthBar" parent="." index="3" unique_id=1951282074]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." index="2" unique_id=728739579]
+position = Vector2(4.5, -1.9999995)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_x4lfa")
+
+[node name="HealthBar" parent="." index="4" unique_id=1951282074]
 offset_left = -7.0
 offset_top = -18.0
 offset_right = 7.0
 offset_bottom = 14.0
 
 [node name="CollisionShape2D" parent="ObscuredArea" parent_id_path=PackedInt32Array(322378701) index="0" unique_id=360312612]
-position = Vector2(0, -4)
+position = Vector2(-3.5, -5.5)
 shape = SubResource("RectangleShape2D_6e4fs")
