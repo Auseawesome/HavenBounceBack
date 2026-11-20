@@ -108,12 +108,16 @@ func _notification(what: int) -> void:
 			update_dependency_lines()
 
 func _on_button_pressed() -> void:
+	Globals.skill_tree.update_skill_information(self)
+
+func _on_skill_bought() -> bool:
 	var cost = skill.cost.get_value()
 	
 	if cost > Globals.skill_tree.current_points:
-		return
+		return false
 	if not skill.can_upgrade_skill():
-		return
+		return false
 		
 	skill.upgrade_skill()
 	Globals.skill_tree.current_points -= cost
+	return true
