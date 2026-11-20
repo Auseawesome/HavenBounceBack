@@ -68,5 +68,5 @@ func update_skill_information(upgrade: SkillUpgrade):
 	selected_upgrade = upgrade
 
 func _on_buy_skill_button_pressed() -> void:
-	if selected_upgrade._on_skill_bought():
+	if is_instance_valid(selected_upgrade) and selected_upgrade._on_skill_bought():
 		update_skill_information(selected_upgrade)
