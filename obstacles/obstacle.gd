@@ -7,9 +7,6 @@ var max_health: int = 100
 @export
 var points : int = 10
 
-@export
-var obscured_material: Material
-
 @onready
 var health := max_health
 
@@ -32,9 +29,3 @@ func on_collision(velocity: Vector2) -> int:
 
 func _on_show_health_timer_timeout() -> void:
 	$HealthBar.visible = false
-
-func _on_player_obscured(_body: Node) -> void:
-	$Sprite2D.material = obscured_material
-
-func _on_player_not_obscured(_body: Node) -> void:
-	$Sprite2D.material = null

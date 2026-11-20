@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cq3xw71ad805i"]
+
+[ext_resource type="PackedScene" uid="uid://bqihy530r71g4" path="res://obstacles/obstacle_base.tscn" id="1_pvtj4"]
+[ext_resource type="Script" uid="uid://dnatvpf6xgh43" path="res://obstacles/obscuring_obstacle.gd" id="2_q5fhi"]
+[ext_resource type="Material" uid="uid://cmwgbx15tsck4" path="res://materials/translucent_material.tres" id="3_q5fhi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0x1uw"]
+radius = 30.016663
+
+[node name="Obstacle" unique_id=841894801 instance=ExtResource("1_pvtj4")]
+
+[node name="ObscuredArea" type="Area2D" parent="." index="4" unique_id=322378701]
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("2_q5fhi")
+obscured_material = ExtResource("3_q5fhi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObscuredArea" index="0" unique_id=360312612]
+position = Vector2(0, -8)
+shape = SubResource("CircleShape2D_0x1uw")
+
+[connection signal="body_entered" from="ObscuredArea" to="ObscuredArea" method="_on_player_obscured"]
+[connection signal="body_exited" from="ObscuredArea" to="ObscuredArea" method="_on_player_not_obscured"]

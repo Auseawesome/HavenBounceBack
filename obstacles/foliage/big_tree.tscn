@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cks8m3qtu78fr"]
 
-[ext_resource type="PackedScene" uid="uid://bqihy530r71g4" path="res://obstacles/obstacle_base.tscn" id="1_xg0c3"]
+[ext_resource type="PackedScene" uid="uid://cq3xw71ad805i" path="res://obstacles/obscuring_obstacle_base.tscn" id="1_xg0c3"]
 [ext_resource type="Texture2D" uid="uid://o7xdqi3a8o70" path="res://sprites/obstacles/big_tree.png" id="2_xqswc"]
 [ext_resource type="Texture2D" uid="uid://cpi8k1yi5fu5o" path="res://sprites/obstacles/big_tree_trunk.png" id="3_4tu6u"]
 [ext_resource type="Texture2D" uid="uid://ck0pu6hga57tv" path="res://sprites/obstacles/big_tree_deco.png" id="3_f4ds6"]

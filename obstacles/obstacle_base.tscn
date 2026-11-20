@@ -8,9 +8,6 @@
 radius = 9.0
 height = 26.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_0x1uw"]
-radius = 30.016663
-
 [node name="Obstacle" type="StaticBody2D" unique_id=841894801]
 script = ExtResource("1_aubd6")
 obscured_material = ExtResource("1_h4oax")
@@ -55,15 +52,4 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 0, 0, 1)
 
-[node name="ObscuredArea" type="Area2D" parent="." unique_id=322378701]
-collision_layer = 0
-collision_mask = 2
-monitorable = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ObscuredArea" unique_id=360312612]
-position = Vector2(0, -8)
-shape = SubResource("CircleShape2D_0x1uw")
-
 [connection signal="timeout" from="ShowHealthTimer" to="." method="_on_show_health_timer_timeout"]
-[connection signal="body_entered" from="ObscuredArea" to="." method="_on_player_obscured"]
-[connection signal="body_exited" from="ObscuredArea" to="." method="_on_player_not_obscured"]

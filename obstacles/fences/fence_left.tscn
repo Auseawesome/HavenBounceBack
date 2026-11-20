@@ -9,9 +9,6 @@ size = Vector2(6.999999, 15)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_887iq"]
 size = Vector2(7, 16)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ocdu2"]
-size = Vector2(8, 9)
-
 [node name="FenceLeft" unique_id=841894801 instance=ExtResource("1_s75w6")]
 points = 5
 
@@ -34,7 +31,3 @@ offset_left = -7.0
 offset_top = -18.0
 offset_right = 7.0
 offset_bottom = 14.0
-
-[node name="CollisionShape2D" parent="ObscuredArea" parent_id_path=PackedInt32Array(322378701) index="0" unique_id=360312612]
-position = Vector2(4, -5.5)
-shape = SubResource("RectangleShape2D_ocdu2")

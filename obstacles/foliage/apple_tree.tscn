@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dxpoqpllbu70g"]
 
-[ext_resource type="PackedScene" uid="uid://bqihy530r71g4" path="res://obstacles/obstacle_base.tscn" id="1_rgfyn"]
+[ext_resource type="PackedScene" uid="uid://cq3xw71ad805i" path="res://obstacles/obscuring_obstacle_base.tscn" id="1_rgfyn"]
 [ext_resource type="Texture2D" uid="uid://cb8ifsqjthqq8" path="res://sprites/obstacles/large_apple_tree.png" id="2_30sw6"]
 [ext_resource type="Texture2D" uid="uid://dgkw67vtevo8t" path="res://sprites/obstacles/large_apple_tree_trunk.png" id="3_ue80c"]
 [ext_resource type="Texture2D" uid="uid://dudqylrpnsrbn" path="res://sprites/obstacles/large_apple_tree_deco.png" id="4_bxqnj"]
