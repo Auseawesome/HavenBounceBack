@@ -22,3 +22,6 @@ func apply_skill(traits: Dictionary[String, Trait]) -> void
 
 @abstract
 func get_shop_message() -> String
+
+@abstract
+func get_proportion_completed() -> float

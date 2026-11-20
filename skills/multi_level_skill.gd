@@ -22,3 +22,6 @@ func get_shop_message() -> String:
 
 func _to_string() -> String:
 	return resource_name + "\nLevel: " + str(current_level) + "/" + str(max_level)
+
+func get_proportion_completed() -> float:
+	return float(current_level) / max_level

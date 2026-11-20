@@ -39,6 +39,7 @@ offset_bottom = -136.0
 script = ExtResource("3_rst24")
 skill = ExtResource("4_gjyfs")
 dependencies = [NodePath("..")]
+dependency_proportion_needed = 0.3
 metadata/_custom_type_script = "uid://bk7mkgs6cdmm6"
 
 [node name="SprintingStart" type="Control" parent="ANewSlime" unique_id=1379219734 node_paths=PackedStringArray("dependencies")]
@@ -51,9 +52,10 @@ offset_bottom = -136.0
 script = ExtResource("3_rst24")
 skill = ExtResource("5_s23nm")
 dependencies = [NodePath("..")]
+dependency_proportion_needed = 0.65
 metadata/_custom_type_script = "uid://bk7mkgs6cdmm6"
 
-[node name="SprintingStart" type="Control" parent="ANewSlime/SprintingStart" unique_id=160443258 node_paths=PackedStringArray("dependencies")]
+[node name="RightfulRebound" type="Control" parent="ANewSlime/SprintingStart" unique_id=160443258 node_paths=PackedStringArray("dependencies")]
 custom_minimum_size = Vector2(136, 136)
 anchors_preset = 0
 offset_top = -272.0
@@ -62,4 +64,5 @@ offset_bottom = -136.0
 script = ExtResource("3_rst24")
 skill = ExtResource("6_e1xs4")
 dependencies = [NodePath("..")]
+dependency_proportion_needed = 0.5
 metadata/_custom_type_script = "uid://bk7mkgs6cdmm6"

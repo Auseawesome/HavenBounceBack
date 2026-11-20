@@ -4,6 +4,8 @@ extends Control
 
 signal skill_moved
 
+signal skill_state_changed
+
 @export
 var skill: Skill:
 	set(value):
@@ -20,6 +22,21 @@ var dependencies: Array[SkillUpgrade]:
 		update_dependency_signals()
 		update_dependency_lines()
 
+@export
+var all_dependencies_needed: bool
+
+@export
+var dependency_proportion_needed: float
+
+enum SkillVisibilityState {
+	UNKNOWN,
+	HIDDEN,
+	GREY,
+	REVEALED
+}
+
+var current_visibility_state: SkillVisibilityState
+
 var dependency_lines: Array[Line2D]
 
 var inner_button := Button.new()
@@ -33,6 +50,12 @@ func _init() -> void:
 	update_size()
 	
 	set_notify_transform(true)
+
+func _ready() -> void:
+	if not Engine.is_editor_hint():
+		update_visibility()
+		for dependency in dependencies:
+			dependency.skill_state_changed.connect(update_visibility)
 
 func update_size() -> void:
 	var icon_size := Vector2.ZERO
@@ -110,8 +133,32 @@ func _notification(what: int) -> void:
 func _on_button_pressed() -> void:
 	Globals.skill_tree.update_skill_information(self)
 
+func dependencies_satisifed() -> bool:
+	if len(dependencies) == 0:
+		return true
+	
+	var valid_dependencies := 0
+	for dependency in dependencies:
+		var prop := dependency.skill.get_proportion_completed()
+		if prop >= dependency_proportion_needed:
+			valid_dependencies += 1
+	
+	if valid_dependencies < 1:
+		return false
+	
+	if not all_dependencies_needed:
+		return true
+	
+	if valid_dependencies == len(dependencies):
+		return true
+	
+	return false
+
 func _on_skill_bought() -> bool:
-	var cost = skill.cost.get_value()
+	if not dependencies_satisifed():
+		return false
+	
+	var cost := skill.cost.get_value()
 	
 	if cost > Globals.current_points:
 		return false
@@ -120,4 +167,32 @@ func _on_skill_bought() -> bool:
 		
 	skill.upgrade_skill()
 	Globals.current_points -= cost
+	skill_state_changed.emit()
 	return true
+
+func update_visibility() -> void:
+	if current_visibility_state == SkillVisibilityState.REVEALED:
+		return
+	
+	if dependencies_satisifed():
+		visible = true
+		inner_button.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
+		skill_state_changed.emit()
+		return
+	
+	if current_visibility_state == SkillVisibilityState.GREY:
+		return
+	
+	for dependency in dependencies:
+		if dependency.dependencies_satisifed():
+			visible = true
+			inner_button.self_modulate = Color(0.22, 0.22, 0.22, 1.0)
+			skill_state_changed.emit()
+			return
+	
+	if current_visibility_state == SkillVisibilityState.HIDDEN:
+		return
+	
+	visible = false
+	skill_state_changed.emit()
+	return
