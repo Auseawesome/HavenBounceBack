@@ -74,10 +74,11 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SkillTitleContainer" type="Control" parent="VBoxContainer/SkillInformation/HBoxContainer" unique_id=1249467373]
-custom_minimum_size = Vector2(253, 167)
+custom_minimum_size = Vector2(196, 151)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("10_fn1xa")
+preserve_y = false
 margin = Vector2(16, 0)
 
 [node name="Label" type="Label" parent="VBoxContainer/SkillInformation/HBoxContainer/SkillTitleContainer" unique_id=2105261524]
@@ -96,7 +97,7 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
-offset_top = -66.0
+offset_top = -69.0
 offset_right = -16.0
 offset_bottom = -16.0
 grow_vertical = 0
@@ -117,10 +118,11 @@ horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="LevelEnterContainer" type="Control" parent="VBoxContainer/SkillInformation/HBoxContainer" unique_id=922947556]
-custom_minimum_size = Vector2(212, 183)
+custom_minimum_size = Vector2(212, 167)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("10_fn1xa")
+preserve_y = false
 margin = Vector2(16, 0)
 metadata/_custom_type_script = "uid://de3vn8bw8afmi"
 

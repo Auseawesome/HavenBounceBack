@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://pnsovks07lkq" path="res://skills/all_skills/sprinting_start.tres" id="5_s23nm"]
 
 [node name="SkillTreeContents" type="Control" unique_id=419601330]
-custom_minimum_size = Vector2(16, 16)
+custom_minimum_size = Vector2(849, 609)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

@@ -3,6 +3,12 @@ class_name MarginPreserver
 extends Control
 
 @export
+var preserve_x: bool = true
+
+@export
+var preserve_y: bool = true
+
+@export
 var margin: Vector2 = Vector2(16, 16)
 
 @export_tool_button("Recalculate Size")
@@ -32,4 +38,12 @@ func calc_maximum_size() -> void:
 		
 		child.position += min_child_pos
 	
-	custom_minimum_size = max_child_pos - min_child_pos + margin
+	var target_size := max_child_pos - min_child_pos + margin
+	
+	var new_min_size := Vector2.ZERO
+	if preserve_x:
+		new_min_size.x = target_size.x
+	if preserve_y:
+		new_min_size.y = target_size.y
+	
+	custom_minimum_size = new_min_size

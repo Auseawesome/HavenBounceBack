@@ -74,6 +74,14 @@ func _on_buy_skill_button_pressed() -> void:
 func _on_text_resized() -> void:
 	skill_information_panel.size_flags_stretch_ratio = 0.3 * Globals.main.get_window_scale_needed()
 	
+	skill_title_container.calc_maximum_size()
+	level_enter_container.calc_maximum_size()
+	
+	var schedule_timer = get_tree().create_timer(0.01)
+	
+	schedule_timer.timeout.connect(fix_buttons)
+
+func fix_buttons() -> void:
 	skill_buy_button.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT)
 	skill_buy_button.set_anchor_and_offset(SIDE_LEFT, 0.0, 16)
 	skill_buy_button.set_anchor_and_offset(SIDE_BOTTOM, 1.0, -16)
@@ -81,6 +89,3 @@ func _on_text_resized() -> void:
 	level_enter_button.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT)
 	level_enter_button.set_anchor_and_offset(SIDE_LEFT, 0.0, 16)
 	level_enter_button.set_anchor_and_offset(SIDE_BOTTOM, 1.0, -16)
-	
-	skill_title_container.calc_maximum_size()
-	level_enter_container.calc_maximum_size()
