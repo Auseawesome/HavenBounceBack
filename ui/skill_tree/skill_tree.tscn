@@ -9,9 +9,11 @@
 [ext_resource type="Resource" uid="uid://dthn4mra4s73o" path="res://skills/trait/all_traits/flings.tres" id="6_0k54q"]
 [ext_resource type="Resource" uid="uid://opj8k3uo1l0i" path="res://skills/trait/all_traits/redirection_responsiveness.tres" id="7_3x14x"]
 [ext_resource type="Resource" uid="uid://3ombqqsbsacq" path="res://skills/trait/all_traits/speed.tres" id="8_y70dy"]
+[ext_resource type="Theme" uid="uid://bcouhl16i72or" path="res://themes/text_size/large_text.tres" id="10_0al5m"]
 [ext_resource type="Script" uid="uid://de3vn8bw8afmi" path="res://ui/skill_tree/margin_preserver.gd" id="10_fn1xa"]
+[ext_resource type="Theme" uid="uid://bb7srgrcud2g4" path="res://themes/text_size/med_text.tres" id="12_0k54q"]
 
-[node name="SkillTree" type="Control" unique_id=497354055 node_paths=PackedStringArray("skill_tree_contents", "level_enter_button", "skill_title_label", "skill_description_label", "skill_buy_button", "skill_title_container")]
+[node name="SkillTree" type="Control" unique_id=497354055 node_paths=PackedStringArray("skill_tree_contents", "level_enter_button", "skill_title_label", "skill_description_label", "skill_buy_button", "skill_title_container", "level_enter_container", "skill_information_panel")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,13 +28,17 @@ skill_title_label = NodePath("VBoxContainer/SkillInformation/HBoxContainer/Skill
 skill_description_label = NodePath("VBoxContainer/SkillInformation/HBoxContainer/MarginContainer/Label")
 skill_buy_button = NodePath("VBoxContainer/SkillInformation/HBoxContainer/SkillTitleContainer/BuySkillButton")
 skill_title_container = NodePath("VBoxContainer/SkillInformation/HBoxContainer/SkillTitleContainer")
+level_enter_container = NodePath("VBoxContainer/SkillInformation/HBoxContainer/LevelEnterContainer")
+skill_information_panel = NodePath("VBoxContainer/SkillInformation")
 metadata/_custom_type_script = "uid://dibghben1f6xc"
 
 [node name="Label" type="Label" parent="." unique_id=688764210]
-layout_mode = 1
-offset_right = 70.0
-offset_bottom = 23.0
-theme_override_font_sizes/font_size = 30
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 156.0
+offset_bottom = 61.0
+theme = ExtResource("10_0al5m")
 text = "Skill Tree"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1308704121]
@@ -57,6 +63,7 @@ layout_mode = 2
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.3
+theme = ExtResource("10_0al5m")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/SkillInformation" unique_id=1032648914]
 layout_mode = 1
@@ -79,7 +86,6 @@ offset_left = 16.0
 offset_top = 16.0
 offset_right = 180.0
 offset_bottom = 109.0
-theme_override_font_sizes/font_size = 32
 text = "Skill Name
 Level ?/?"
 
@@ -94,7 +100,6 @@ offset_top = -66.0
 offset_right = -16.0
 offset_bottom = -16.0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 30
 text = "Buy (Cost)"
 
 [node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/SkillInformation/HBoxContainer" unique_id=2131799893]
@@ -107,12 +112,12 @@ custom_minimum_size = Vector2(64, 16)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("12_0k54q")
 horizontal_alignment = 1
 autowrap_mode = 3
 
 [node name="LevelEnterContainer" type="Control" parent="VBoxContainer/SkillInformation/HBoxContainer" unique_id=922947556]
-custom_minimum_size = Vector2(201, 66)
+custom_minimum_size = Vector2(212, 183)
 layout_mode = 2
 size_flags_horizontal = 0
 script = ExtResource("10_fn1xa")
@@ -125,9 +130,8 @@ anchors_preset = -1
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 16.0
-offset_top = -132.0
-offset_right = 185.0
-offset_bottom = -82.0
+offset_top = -69.0
+offset_right = 196.0
+offset_bottom = -16.0
 grow_vertical = 0
-theme_override_font_sizes/font_size = 30
 text = "Enter Level"

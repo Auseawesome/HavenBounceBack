@@ -3,10 +3,16 @@
 [ext_resource type="Script" uid="uid://bp0vgsh2rrhvn" path="res://ui/main_menu.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://ckh5qrfxnbncj" path="res://main.gd" id="1_lquwl"]
 [ext_resource type="PackedScene" uid="uid://cibfdhuc8bipr" path="res://ui/skill_tree/skill_tree.tscn" id="3_1bvp3"]
+[ext_resource type="Theme" uid="uid://caposkbeuktxv" path="res://themes/text_size/title_text.tres" id="3_7mycd"]
 [ext_resource type="Script" uid="uid://ck45l0w7jd4dt" path="res://ui/skill_tree/skill_points.gd" id="3_h2yge"]
+[ext_resource type="Theme" uid="uid://bcouhl16i72or" path="res://themes/text_size/large_text.tres" id="4_272bh"]
+[ext_resource type="Theme" uid="uid://bb7srgrcud2g4" path="res://themes/text_size/med_text.tres" id="6_272bh"]
 
 [node name="Main" type="Node" unique_id=1726187915]
 script = ExtResource("1_lquwl")
+title_text = ExtResource("3_7mycd")
+large_text = ExtResource("4_272bh")
+med_text = ExtResource("6_272bh")
 
 [node name="MainMenu" type="Control" parent="." unique_id=2111156708]
 layout_mode = 3
@@ -33,7 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 50
+theme = ExtResource("3_7mycd")
 text = "Splattershot: Send it!"
 horizontal_alignment = 1
 
@@ -50,7 +56,7 @@ offset_right = 4.0
 offset_bottom = 4.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme = ExtResource("4_272bh")
 text = "Play Game!"
 
 [node name="SkillTree" parent="." unique_id=393698293 instance=ExtResource("3_1bvp3")]
@@ -69,6 +75,6 @@ offset_top = 10.0
 offset_right = -10.0
 offset_bottom = 44.0
 grow_horizontal = 0
-theme_override_font_sizes/font_size = 24
+theme = ExtResource("6_272bh")
 text = "Skill Points: 0"
 script = ExtResource("3_h2yge")

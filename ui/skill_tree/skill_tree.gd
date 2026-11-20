@@ -22,6 +22,12 @@ var skill_buy_button: Button
 @export
 var skill_title_container: MarginPreserver
 
+@export
+var level_enter_container: MarginPreserver
+
+@export
+var skill_information_panel: Panel
+
 var traits: Dictionary[String, Trait] = {}
 
 var current_points: int :
@@ -37,6 +43,7 @@ func _ready() -> void:
 	Globals.skill_tree = self
 	level_enter_button.pressed.connect(Globals.enter_level)
 	skill_buy_button.pressed.connect(_on_buy_skill_button_pressed)
+	get_window().size_changed.connect(_on_text_resized)
 
 func prepare_traits() -> void:
 	for default_trait in default_traits:
@@ -63,3 +70,17 @@ func update_skill_information(upgrade: SkillUpgrade):
 func _on_buy_skill_button_pressed() -> void:
 	if selected_upgrade._on_skill_bought():
 		update_skill_information(selected_upgrade)
+
+func _on_text_resized() -> void:
+	skill_information_panel.size_flags_stretch_ratio = 0.3 * Globals.main.get_window_scale_needed()
+	
+	skill_buy_button.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT)
+	skill_buy_button.set_anchor_and_offset(SIDE_LEFT, 0.0, 16)
+	skill_buy_button.set_anchor_and_offset(SIDE_BOTTOM, 1.0, -16)
+	
+	level_enter_button.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT)
+	level_enter_button.set_anchor_and_offset(SIDE_LEFT, 0.0, 16)
+	level_enter_button.set_anchor_and_offset(SIDE_BOTTOM, 1.0, -16)
+	
+	skill_title_container.calc_maximum_size()
+	level_enter_container.calc_maximum_size()
