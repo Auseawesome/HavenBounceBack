@@ -32,12 +32,6 @@ func calc_maximum_size() -> void:
 		max_child_pos.x = max(max_child_pos.x, child.position.x + child.get_combined_minimum_size().x)
 		max_child_pos.y = max(max_child_pos.y, child.position.y + child.get_combined_minimum_size().y)
 	
-	for child in get_children():
-		if child is not Control:
-			continue;
-		
-		child.position += min_child_pos
-	
 	var target_size := max_child_pos - min_child_pos + margin
 	
 	var new_min_size := Vector2.ZERO

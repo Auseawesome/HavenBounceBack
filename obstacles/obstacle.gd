@@ -18,8 +18,8 @@ func _ready() -> void:
 		print(self, " does not have a centered position")
 
 func on_collision(velocity: Vector2) -> int:
-	var damage_factor: float = Globals.skill_tree.traits.damage_factor.get_value()
-	var damage_exp: float = Globals.skill_tree.traits.damage_exponent.get_value()
+	var damage_factor: float = Globals.traits.damage_factor.get_value()
+	var damage_exp: float = Globals.traits.damage_exponent.get_value()
 	
 	health -= pow(velocity.length() / 1024 * damage_factor, damage_exp)
 	$HealthBar.visible = true

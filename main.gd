@@ -37,3 +37,7 @@ func text_resize() -> void:
 	title_text.default_font_size = 54 * scale_needed
 	large_text.default_font_size = 32 * scale_needed
 	med_text.default_font_size = 24 * scale_needed
+	
+	if (is_instance_valid(Globals.skill_tree)):
+		Globals.skill_tree.free()
+		Globals.add_skill_tree()

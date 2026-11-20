@@ -11,7 +11,7 @@ const VIEWPORT_SIZE_VEC = Vector2(VIEWPORT_SIZE, VIEWPORT_SIZE)
 var click_held: bool
 
 @onready
-var traits := Globals.skill_tree.traits
+var traits := Globals.traits
 
 var remaining_flings: int
 
@@ -100,4 +100,4 @@ func _on_collision(body: Node) -> void:
 		return;
 	
 	var points_gained = body.on_collision(linear_velocity)
-	Globals.skill_tree.current_points += points_gained
+	Globals.current_points += points_gained

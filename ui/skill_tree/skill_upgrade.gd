@@ -113,11 +113,11 @@ func _on_button_pressed() -> void:
 func _on_skill_bought() -> bool:
 	var cost = skill.cost.get_value()
 	
-	if cost > Globals.skill_tree.current_points:
+	if cost > Globals.current_points:
 		return false
 	if not skill.can_upgrade_skill():
 		return false
 		
 	skill.upgrade_skill()
-	Globals.skill_tree.current_points -= cost
+	Globals.current_points -= cost
 	return true

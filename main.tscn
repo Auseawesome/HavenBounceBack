@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://bp0vgsh2rrhvn" path="res://ui/main_menu.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://ckh5qrfxnbncj" path="res://main.gd" id="1_lquwl"]
-[ext_resource type="PackedScene" uid="uid://cibfdhuc8bipr" path="res://ui/skill_tree/skill_tree.tscn" id="3_1bvp3"]
 [ext_resource type="Theme" uid="uid://caposkbeuktxv" path="res://themes/text_size/title_text.tres" id="3_7mycd"]
 [ext_resource type="Script" uid="uid://ck45l0w7jd4dt" path="res://ui/skill_tree/skill_points.gd" id="3_h2yge"]
 [ext_resource type="Theme" uid="uid://bcouhl16i72or" path="res://themes/text_size/large_text.tres" id="4_272bh"]
@@ -58,9 +57,6 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_272bh")
 text = "Play Game!"
-
-[node name="SkillTree" parent="." unique_id=393698293 instance=ExtResource("3_1bvp3")]
-visible = false
 
 [node name="HUD" type="CanvasLayer" parent="." unique_id=369673628]
 
