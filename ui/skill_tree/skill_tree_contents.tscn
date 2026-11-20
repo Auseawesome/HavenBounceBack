@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://bk7mkgs6cdmm6" path="res://ui/skill_tree/skill_upgrade.gd" id="3_rst24"]
 [ext_resource type="Resource" uid="uid://dldoj348efgy3" path="res://skills/all_skills/sharp_vengeance.tres" id="4_gjyfs"]
 [ext_resource type="Resource" uid="uid://pnsovks07lkq" path="res://skills/all_skills/sprinting_start.tres" id="5_s23nm"]
+[ext_resource type="Resource" uid="uid://cs0gdiqwojyh3" path="res://skills/all_skills/rightful_rebound.tres" id="6_e1xs4"]
 
 [node name="SkillTreeContents" type="Control" unique_id=419601330]
 custom_minimum_size = Vector2(849, 609)
@@ -20,10 +21,10 @@ metadata/_custom_type_script = "uid://de3vn8bw8afmi"
 [node name="ANewSlime" type="Control" parent="." unique_id=1152341308]
 custom_minimum_size = Vector2(136, 136)
 anchors_preset = 0
-offset_left = 697.0
-offset_top = 457.0
-offset_right = 833.0
-offset_bottom = 593.0
+offset_left = 688.0
+offset_top = 632.0
+offset_right = 824.0
+offset_bottom = 768.0
 script = ExtResource("3_rst24")
 skill = ExtResource("3_ddacy")
 metadata/_custom_type_script = "uid://bk7mkgs6cdmm6"
@@ -49,5 +50,16 @@ offset_right = 408.0
 offset_bottom = -136.0
 script = ExtResource("3_rst24")
 skill = ExtResource("5_s23nm")
+dependencies = [NodePath("..")]
+metadata/_custom_type_script = "uid://bk7mkgs6cdmm6"
+
+[node name="SprintingStart" type="Control" parent="ANewSlime/SprintingStart" unique_id=160443258 node_paths=PackedStringArray("dependencies")]
+custom_minimum_size = Vector2(136, 136)
+anchors_preset = 0
+offset_top = -272.0
+offset_right = 136.0
+offset_bottom = -136.0
+script = ExtResource("3_rst24")
+skill = ExtResource("6_e1xs4")
 dependencies = [NodePath("..")]
 metadata/_custom_type_script = "uid://bk7mkgs6cdmm6"

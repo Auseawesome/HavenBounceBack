@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="FloatIncreaseSkill" format=3 uid="uid://cs0gdiqwojyh3"]
+
+[ext_resource type="Script" uid="uid://xqav88ne5bdn" path="res://skills/cost_providers/constant_provider.gd" id="1_tk5vi"]
+[ext_resource type="Texture2D" uid="uid://c0mmp5x6w0ud" path="res://sprites/skills/rightful_rebound.png" id="2_tk5vi"]
+[ext_resource type="Script" uid="uid://c5cq4io6m8djf" path="res://skills/float_increase_skill.gd" id="3_g5h4f"]
+[ext_resource type="Resource" uid="uid://c3u0qsb4u6jnn" path="res://skills/trait/all_traits/bounciness.tres" id="4_tk5vi"]
+
+[sub_resource type="Resource" id="Resource_dyy1w"]
+script = ExtResource("1_tk5vi")
+cost = 25
+metadata/_custom_type_script = "uid://xqav88ne5bdn"
+
+[resource]
+resource_name = "Rightful Rebound"
+script = ExtResource("3_g5h4f")
+target_trait = ExtResource("4_tk5vi")
+exponent_increase = 0.1
+max_level = 5
+icon = ExtResource("2_tk5vi")
+desc = "Up your spirits and keep rebounding for longer! Preserve your velocity after colliding with an object."
+cost = SubResource("Resource_dyy1w")
+metadata/_custom_type_script = "uid://c5cq4io6m8djf"
