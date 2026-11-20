@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://br1ut0i6nwfk2"]
 
 [ext_resource type="PackedScene" uid="uid://bqihy530r71g4" path="res://obstacles/obstacle_base.tscn" id="1_p7dgv"]
+[ext_resource type="Texture2D" uid="uid://dnqvo1htloyim" path="res://sprites/obstacles/small_tree.png" id="2_icnxw"]
+[ext_resource type="Texture2D" uid="uid://wffmu4hncvl0" path="res://sprites/obstacles/small_tree_deco.png" id="3_q3fc3"]
+[ext_resource type="Texture2D" uid="uid://wgtk7q13k4ig" path="res://sprites/obstacles/small_tree_trunk.png" id="3_x1gf8"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p7dgv"]
 radius = 6.0
@@ -13,14 +16,27 @@ radius = 19.026299
 max_health = 50
 
 [node name="Sprite2D" parent="." index="0" unique_id=2041058344]
+z_index = 1
 position = Vector2(0, -14)
-region_rect = Rect2(112, 80, 48, 48)
+texture = ExtResource("2_icnxw")
+region_enabled = false
 
-[node name="CollisionShape2D" parent="." index="1" unique_id=396573896]
+[node name="Trunk" type="Sprite2D" parent="." index="1" unique_id=1200596137]
+position = Vector2(0, -14)
+texture = ExtResource("3_x1gf8")
+region_rect = Rect2(0, 0, 64, 80)
+
+[node name="LeafLitter" type="Sprite2D" parent="." index="2" unique_id=917246412]
+z_index = -1
+position = Vector2(0, -14)
+texture = ExtResource("3_q3fc3")
+region_rect = Rect2(0, 0, 64, 80)
+
+[node name="CollisionShape2D" parent="." index="3" unique_id=396573896]
 position = Vector2(0, 0)
 shape = SubResource("CapsuleShape2D_p7dgv")
 
-[node name="HealthBar" parent="." index="3" unique_id=1951282074]
+[node name="HealthBar" parent="." index="5" unique_id=1951282074]
 offset_top = -43.0
 offset_bottom = -11.0
 
