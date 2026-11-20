@@ -14,7 +14,7 @@ var world: World
 
 var traits: Dictionary[String, Trait] = {}
 
-var current_points: int:
+var current_points: int = 1000:
 	set(value):
 		current_points = value
 		skill_points_label.text = "Skill Points: " + str(value)

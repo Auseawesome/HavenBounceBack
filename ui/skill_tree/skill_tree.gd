@@ -59,11 +59,24 @@ func iterate_skill_children(node: Node) -> void:
 func update_skill_information(upgrade: SkillUpgrade):
 	var skill := upgrade.skill
 	skill_title_label.text = skill.get_shop_message()
-	skill_description_label.text = skill.desc
 	if upgrade.current_visibility_state >= SkillUpgrade.SkillVisibilityState.NOT_BOUGHT:
+		skill_description_label.text = skill.desc
 		skill_buy_button.text = "Buy (" + str(skill.cost.get_value()) + ")"
 	else:
-		skill_buy_button.text = "Not Unlocked"
+		skill_description_label.text = "This skill is not unlocked yet, unlock more of it's dependencies first!"
+		var completion: float = 0
+		for dependency in upgrade.dependencies:
+			var prop_completed := dependency.skill.get_proportion_completed()
+			var needed_completion := upgrade.dependency_proportion_needed
+			if upgrade.all_dependencies_needed:
+				completion += clamp(prop_completed / needed_completion, 0, 1)
+			else:
+				completion = max(completion, prop_completed / needed_completion)
+		
+		if upgrade.all_dependencies_needed:
+				completion /= len(upgrade.dependencies)
+		
+		skill_buy_button.text = "%1.1f%%" % (completion * 100)
 	skill_title_container.calc_maximum_size()
 	selected_upgrade = upgrade
 
